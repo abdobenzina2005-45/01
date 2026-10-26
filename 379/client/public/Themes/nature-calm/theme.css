@@ -1,0 +1,35 @@
+/* Optional theme package: nature-calm. Loaded only when selected. */
+
+.app-shell.theme-nature-calm { --theme-bg:#e9efe6; --theme-surface:#fff; --theme-surface-strong:#f8faf5; --theme-text:#244441; --theme-muted:#66817b; --theme-accent:#d09b68; --theme-accent-strong:#477b70; --theme-border:rgba(67,119,107,.25); --theme-glow:rgba(89,151,135,.12); --theme-hero:linear-gradient(145deg,#6b9a86,#2d6158); }
+.app-shell.theme-nature-calm {
+  --theme-bg: #edf1e8; --theme-surface: #fbfcf6; --theme-surface-strong: #e3eadf;
+  --theme-text: #344639; --theme-muted: #526050; --theme-accent: #a9764f;
+  --theme-accent-strong: #456650; --theme-border: rgba(79,107,82,.22);
+  --theme-glow: rgba(85,125,91,.06); --theme-hero: linear-gradient(145deg,#f4f4e9,#e6eee5);
+}
+.app-shell.theme-nature-calm .hero-panel { background: var(--theme-hero) !important; }
+.app-shell.theme-nature-calm .hero-panel::before, .app-shell.theme-nature-calm .hero-panel::after { content: none !important; }
+.app-shell.theme-nature-calm .hero-content::before { border: 1px solid var(--theme-border) !important; background: #fbfcf6 !important; box-shadow: 0 8px 25px rgba(57,75,53,.08) !important; }
+.app-shell.theme-nature-calm .hero-content::after { border: 1px solid rgba(79,107,82,.15) !important; }
+.app-shell.theme-nature-calm .hero-countdown, .app-shell.theme-nature-calm .hero-countdown b, .app-shell.theme-nature-calm .hero-eyebrow, .app-shell.theme-nature-calm .location-label, .app-shell.theme-nature-calm .hero-bottom-note { color: var(--theme-text) !important; text-shadow: none !important; }
+.app-shell.theme-nature-calm .next-prayer-pill { color: var(--theme-text) !important; background: #e8eee3 !important; border-color: var(--theme-border) !important; box-shadow: none !important; }
+.app-shell.theme-nature-calm .radial-orbit { border-color: rgba(79,107,82,.18) !important; box-shadow: none !important; }
+.app-shell.theme-nature-calm .radial-prayer-card, .app-shell.theme-nature-calm .radial-utility-node { color: var(--theme-text) !important; border: 1px solid var(--theme-border) !important; background: #fbfcf6 !important; box-shadow: 0 7px 20px rgba(57,75,53,.08) !important; }
+.app-shell.theme-nature-calm .radial-prayer-card::before, .app-shell.theme-nature-calm .radial-utility-node::before { border: 1px solid rgba(79,107,82,.16) !important; }
+.app-shell.theme-nature-calm .radial-prayer-icon, .app-shell.theme-nature-calm .radial-utility-node > span, .app-shell.theme-nature-calm .feature-icon, .app-shell.theme-nature-calm .prayer-icon { color: var(--theme-accent-strong) !important; background: #e7eee4 !important; border-color: var(--theme-border) !important; filter: none !important; }
+.app-shell.theme-nature-calm .radial-prayer-card strong, .app-shell.theme-nature-calm .radial-prayer-card time, .app-shell.theme-nature-calm .radial-utility-node strong { color: var(--theme-text) !important; text-shadow: none !important; }
+.app-shell.theme-nature-calm .radial-prayer-card time small, .app-shell.theme-nature-calm .radial-prayer-index { color: var(--theme-muted) !important; }
+.app-shell.theme-nature-calm .brand-mark, .app-shell.theme-nature-calm .top-actions button { color: var(--theme-accent-strong) !important; background: #fbfcf6 !important; border-color: var(--theme-border) !important; box-shadow: none !important; }
+.app-shell.theme-nature-calm .radial-prayer-icon svg, .app-shell.theme-nature-calm .radial-utility-node svg { filter: none !important; stroke-width: 1.8; }
+.app-shell.theme-nature-calm .parchment-copy{border-width:1px!important;border-radius:18px!important;background:linear-gradient(145deg,#fffdf8,#f0f2e9)!important;box-shadow:inset 0 0 0 4px rgba(93,128,106,.045),0 10px 24px rgba(45,62,51,.1)!important}
+.app-shell.theme-nature-calm .parchment-copy .dhikr-text{color:var(--dhikr-text-color,#344639)!important}
+.app-shell.theme-nature-calm .parchment-copy .sacred-dhikr-title, .app-shell.theme-nature-calm .parchment-copy .custom-dhikr-title, .app-shell.theme-nature-calm .parchment-copy .misc-dhikr-title{color:var(--dhikr-title-color,#386e63)!important}
+.app-shell.theme-nature-calm .mechanical-counter-button::before{background:radial-gradient(circle at 35% 28%,#fffdf8,#e4ece3)!important;box-shadow:0 0 0 4px rgba(93,128,106,.1),inset 0 0 0 4px rgba(255,255,255,.8)!important}
+.app-shell.theme-nature-calm .mechanical-counter-button .counter-core{background:#f9fbf5!important}
+.app-shell.theme-nature-calm .mechanical-counter-button .counter-number{color:#386e63!important}
+.app-shell.theme-nature-calm .dhikr-browse-count.is-complete{color:#fff!important;background:#477b70!important}
+.app-shell.theme-nature-calm{background-color:#edf1e8!important;background-image:radial-gradient(ellipse at 6% 12%,rgba(154,184,141,.22),transparent 35rem),radial-gradient(ellipse at 92% 76%,rgba(198,177,137,.17),transparent 34rem),repeating-linear-gradient(135deg,rgba(93,128,106,.018) 0 1px,transparent 1px 48px),linear-gradient(145deg,#f3f4eb,#e9efe6 60%,#e5ece5)!important}
+.app-shell.theme-nature-calm .hero-panel{background:radial-gradient(ellipse at 12% 40%,rgba(155,188,149,.16),transparent 31rem),radial-gradient(ellipse at 88% 65%,rgba(208,155,104,.1),transparent 28rem),linear-gradient(145deg,#f4f4e9,#e8eee5 62%,#e1e9e1)!important}
+.app-shell.theme-nature-calm .radial-prayer-card, .app-shell.theme-nature-calm .radial-utility-node{border-radius:28px!important}
+.app-shell.theme-nature-calm .radial-prayer-icon, .app-shell.theme-nature-calm .radial-utility-node>span, .app-shell.theme-nature-calm .feature-icon, .app-shell.theme-nature-calm .prayer-icon{border-radius:48% 48% 50% 16%!important;background:linear-gradient(145deg,#edf3e9,#e1eadf)!important;box-shadow:inset 0 1px #fff,0 3px 8px rgba(56,84,60,.08)!important}
+.app-shell.theme-nature-calm .location-option-icon{border-radius:48% 48% 50% 16%!important}
