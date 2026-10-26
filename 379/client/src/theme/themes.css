@@ -1,0 +1,4 @@
+
+/* Final precedence fixes against the legacy wide-screen responsive rules. */
+.app-shell[class*="theme-"] .hero-content{width:360px!important;margin:0!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;animation:none!important}
+.app-shell[class*="theme-"] .radial-prayer-stage{position:absolute!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(1200px,100vw)!important;max-width:1200px!important}
