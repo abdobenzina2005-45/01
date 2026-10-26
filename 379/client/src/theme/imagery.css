@@ -1,0 +1,3036 @@
+/* Theme-linked artwork for the hero, prayer cards, utility icons, adhkar and theme previews. */
+.hero-panel > .hero-theme-photo,
+.hero-panel > .hero-prayer-photo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-panel > .hero-theme-photo { z-index: -3; opacity: .72; }
+.hero-panel > .hero-prayer-photo { z-index: -2; opacity: .44; mix-blend-mode: screen; transition: opacity .35s ease; }
+.hero-panel > .hero-overlay { z-index: -1; }
+.hero-panel > .hero-noise { z-index: -1; }
+
+.app-shell[class*="theme-"] .radial-prayer-card {
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--theme-surface) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  border-radius: inherit;
+  background-size: cover;
+  background-position: center;
+  opacity: .58;
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .radial-prayer-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(8, 12, 15, .14), rgba(8, 12, 15, .76));
+}
+.app-shell[class*="theme-"] .radial-prayer-card > :not(.radial-prayer-photo) { z-index: 1; }
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-index { position: absolute !important; }
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon { position: relative !important; }
+.app-shell[class*="theme-"] .radial-prayer-card > em { z-index: 2; }
+
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 46px;
+  width: 46px !important;
+  height: 46px !important;
+  display: grid !important;
+  place-items: center;
+  margin: 0 0 2px;
+  overflow: hidden;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 50%;
+  color: var(--theme-accent-strong) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.12), 0 3px 12px rgba(0,0,0,.2);
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > .utility-art-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: inherit;
+  background-size: cover !important;
+  background-position: center !important;
+  opacity: .78;
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > svg {
+  position: relative;
+  z-index: 1;
+  width: 22px;
+  height: 22px;
+  color: var(--theme-accent-strong) !important;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,.55));
+  stroke-width: 1.8;
+}
+.app-shell[class*="theme-"] .radial-utility-node > strong { position: relative; z-index: 1; }
+
+/* Each identity reshapes the image-backed icon rather than showing a generic glyph tile. */
+.app-shell.theme-luxury-editorial .radial-utility-node > .utility-art { border-radius: 50% 50% 42% 42%; border: 1px solid rgba(216,180,119,.75) !important; box-shadow: 0 0 0 3px rgba(216,180,119,.13), inset 0 0 0 2px rgba(255,255,255,.12); }
+.app-shell.theme-technological-neon .radial-utility-node > .utility-art { border-radius: 8px; clip-path: polygon(18% 0,82% 0,100% 18%,100% 82%,82% 100%,18% 100%,0 82%,0 18%); }
+.app-shell.theme-modern-minimal .radial-utility-node > .utility-art { border-radius: 50%; box-shadow: inset 0 1px rgba(255,255,255,.7), 0 4px 12px rgba(38,63,59,.12); }
+.app-shell.theme-windows11-fluent .radial-utility-node > .utility-art { border-radius: 15px; backdrop-filter: blur(12px) saturate(1.25); }
+.app-shell.theme-andalusian .radial-utility-node > .utility-art { border-radius: 5px 16px; border: 2px double var(--theme-accent) !important; }
+.app-shell.theme-glassmorphism .radial-utility-node > .utility-art { border-radius: 18px; backdrop-filter: blur(12px) saturate(1.35); box-shadow: 0 0 16px var(--theme-glow), inset 0 0 0 1px rgba(255,255,255,.25); }
+.app-shell.theme-amoled-cyber .radial-utility-node > .utility-art { border-radius: 6px; clip-path: polygon(22% 0,78% 0,100% 22%,100% 78%,78% 100%,22% 100%,0 78%,0 22%); }
+.app-shell.theme-material-depth .radial-utility-node > .utility-art { border-radius: 13px; box-shadow: 4px 4px 10px rgba(0,0,0,.25), -2px -2px 8px rgba(255,255,255,.08); }
+.app-shell.theme-nature-calm .radial-utility-node > .utility-art { border-radius: 48% 48% 50% 16%; box-shadow: inset 0 1px rgba(255,255,255,.55), 0 4px 12px rgba(56,84,60,.13); }
+.app-shell.theme-dashboard-grid .radial-utility-node > .utility-art { border-radius: 4px; clip-path: polygon(0 0,82% 0,100% 18%,100% 100%,18% 100%,0 82%); }
+
+/* Theme chooser cards double as image previews for the installed packages. */
+.app-shell[class*="theme-"] .theme-chooser-card {
+  background-position: center;
+  background-size: cover;
+  color: #fff !important;
+  text-align: right;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.14);
+  text-shadow: 0 1px 5px rgba(0,0,0,.5);
+}
+.app-shell[class*="theme-"] .theme-chooser-card .theme-chooser-copy strong,
+.app-shell[class*="theme-"] .theme-chooser-card .theme-chooser-copy small,
+.app-shell[class*="theme-"] .theme-chooser-card .theme-chooser-copy em { color: #fff !important; }
+.app-shell[class*="theme-"] .theme-chooser-card .theme-chooser-swatch { background: rgba(0,0,0,.32); border-color: rgba(255,255,255,.4); }
+.app-shell[class*="theme-"] .theme-chooser-card.is-selected { outline: 2px solid var(--theme-accent-strong); outline-offset: 2px; }
+
+.app-shell[class*="theme-"] .adhkar-card-wrap,
+.app-shell[class*="theme-"] .dhikr-hero-banner {
+  background-size: cover;
+  background-position: center;
+}
+.app-shell[class*="theme-"] .adhkar-card-wrap { border: 1px solid var(--theme-border); box-shadow: 0 12px 28px rgba(0,0,0,.18); }
+.app-shell[class*="theme-"] .dhikr-hero-banner { border: 1px solid var(--theme-border); background-position: center 48%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel > .hero-prayer-photo { transition: none; }
+}
+
+
+/* Fill the entire icon silhouette with the photo; the image follows the theme's circle/square clipping. */
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art {
+  padding: 0 !important;
+  gap: 0 !important;
+  isolation: isolate;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > img.utility-art-photo {
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  display: block !important;
+  width: calc(100% + 2px) !important;
+  height: calc(100% + 2px) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+  opacity: .92;
+  pointer-events: none;
+}
+
+/* Use a real, eager cover image in each adhkar category so artwork is visible before hover. */
+.app-shell[class*="theme-"] .adhkar-card-wrap { position: relative; isolation: isolate; }
+.app-shell[class*="theme-"] .adhkar-card-wrap > .adhkar-cover-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1 !important;
+  filter: none !important;
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .adhkar-card-wrap::before {
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10,16,18,.08), rgba(10,16,18,.66));
+  opacity: 1;
+}
+.app-shell[class*="theme-"] .adhkar-card-wrap > .adhkar-card {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+.app-shell[class*="theme-"] .adhkar-card-wrap > .adhkar-card-menu-button { z-index: 4; }
+.app-shell[class*="theme-"] .adhkar-card-wrap > .adhkar-card-menu { z-index: 12; }
+
+/* Modal panels and controls inherit paired surface/ink colors from each theme. */
+.app-shell[class*="theme-"] :is(
+  .calendar-sheet,
+  .location-sheet,
+  .adhkar-sheet,
+  .card-create-sheet,
+  .sleep-sheet,
+  .dhikr-sheet,
+  .settings-sheet,
+  .sound-modal-card
+) {
+  color: var(--theme-text) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong), var(--theme-surface)) !important;
+  border-color: var(--theme-border) !important;
+}
+.app-shell[class*="theme-"] :is(
+  .calendar-sheet,
+  .location-sheet,
+  .adhkar-sheet,
+  .card-create-sheet,
+  .sleep-sheet,
+  .dhikr-sheet,
+  .settings-sheet,
+  .sound-modal-card
+) :is(h1, h2, h3, h4, p, label):not(.dhikr-text):not(.sleep-sacred-text) {
+  color: var(--theme-text) !important;
+}
+
+/* Dialog text that used to be forced white in dark mode now tracks the actual theme surface. */
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(strong, small, span, label),
+.app-shell[class*="theme-"] .sound-modal .sound-modal-card :is(strong, small, span, label),
+.app-shell[class*="theme-"] .card-create-modal .card-create-sheet :is(strong, small, span, label) {
+  color: var(--theme-text) !important;
+}
+.app-shell[class*="theme-"] .settings-topbar p,
+.app-shell[class*="theme-"] .settings-row small,
+.app-shell[class*="theme-"] .settings-subrow small,
+.app-shell[class*="theme-"] .sound-setting small,
+.app-shell[class*="theme-"] .prayer-setting-row small,
+.app-shell[class*="theme-"] .sound-modal-header p,
+.app-shell[class*="theme-"] .location-title-wrap p,
+.app-shell[class*="theme-"] .location-option small,
+.app-shell[class*="theme-"] .location-results p,
+.app-shell[class*="theme-"] .location-results small,
+.app-shell[class*="theme-"] .adhkar-intro,
+.app-shell[class*="theme-"] .sleep-topbar p,
+.app-shell[class*="theme-"] .calendar-sheet small {
+  color: var(--theme-muted) !important;
+}
+.app-shell[class*="theme-"] .adhkar-topbar h2,
+.app-shell[class*="theme-"] .dhikr-topbar h2,
+.app-shell[class*="theme-"] .sleep-topbar h2,
+.app-shell[class*="theme-"] .location-title-wrap h2,
+.app-shell[class*="theme-"] .settings-topbar h2,
+.app-shell[class*="theme-"] .sound-modal-header h3,
+.app-shell[class*="theme-"] .calendar-sheet h2,
+.app-shell[class*="theme-"] .calendar-sheet h3,
+.app-shell[class*="theme-"] .card-create-sheet h3,
+.app-shell[class*="theme-"] .nested-card-topbar h3 {
+  color: var(--theme-text) !important;
+}
+
+.app-shell[class*="theme-"] .settings-modal .settings-row,
+.app-shell[class*="theme-"] .settings-modal .settings-subrow,
+.app-shell[class*="theme-"] .settings-modal .sound-setting,
+.app-shell[class*="theme-"] .settings-modal .adhkar-master-row,
+.app-shell[class*="theme-"] .settings-modal .adhkar-feature-row,
+.app-shell[class*="theme-"] .location-option,
+.app-shell[class*="theme-"] .location-results button,
+.app-shell[class*="theme-"] .location-search,
+.app-shell[class*="theme-"] .location-status,
+.app-shell[class*="theme-"] .card-create-choice button,
+.app-shell[class*="theme-"] .custom-card-form input,
+.app-shell[class*="theme-"] .custom-card-form textarea,
+.app-shell[class*="theme-"] .custom-card-form select {
+  color: var(--theme-text) !important;
+  background-color: var(--theme-surface-strong) !important;
+  border-color: var(--theme-border) !important;
+}
+.app-shell[class*="theme-"] .settings-row strong,
+.app-shell[class*="theme-"] .settings-subrow strong,
+.app-shell[class*="theme-"] .sound-setting strong,
+.app-shell[class*="theme-"] .prayer-setting-row strong,
+.app-shell[class*="theme-"] .location-option strong,
+.app-shell[class*="theme-"] .location-results button strong,
+.app-shell[class*="theme-"] .card-create-choice strong {
+  color: var(--theme-text) !important;
+}
+.app-shell[class*="theme-"] .settings-row::before,
+.app-shell[class*="theme-"] .settings-subrow::before,
+.app-shell[class*="theme-"] .sound-setting::before {
+  opacity: .08 !important;
+}
+.app-shell[class*="theme-"] .settings-upload,
+.app-shell[class*="theme-"] .settings-modal .background-delete-button,
+.app-shell[class*="theme-"] .sound-modal-actions button,
+.app-shell[class*="theme-"] .sound-modal-actions label,
+.app-shell[class*="theme-"] .card-create-choice button,
+.app-shell[class*="theme-"] .fetch-icon-button,
+.app-shell[class*="theme-"] .card-upload,
+.app-shell[class*="theme-"] .background-plus {
+  color: var(--theme-text) !important;
+  background-color: var(--theme-surface-strong) !important;
+  border-color: var(--theme-border) !important;
+}
+.app-shell[class*="theme-"] .location-search input,
+.app-shell[class*="theme-"] .custom-card-form input::placeholder,
+.app-shell[class*="theme-"] .location-search input::placeholder {
+  color: var(--theme-muted) !important;
+}
+.app-shell[class*="theme-"] .location-search input,
+.app-shell[class*="theme-"] .custom-card-form input,
+.app-shell[class*="theme-"] .custom-card-form textarea,
+.app-shell[class*="theme-"] .custom-card-form select {
+  color: var(--theme-text) !important;
+}
+
+.app-shell[class*="theme-"] .adhkar-topbar .adhkar-back,
+.app-shell[class*="theme-"] .adhkar-topbar .adhkar-edit,
+.app-shell[class*="theme-"] .location-close,
+.app-shell[class*="theme-"] .sleep-back,
+.app-shell[class*="theme-"] .sleep-close,
+.app-shell[class*="theme-"] .settings-close,
+.app-shell[class*="theme-"] .sound-modal-header button {
+  color: var(--theme-text) !important;
+  background: var(--theme-surface-strong) !important;
+  border-color: var(--theme-border) !important;
+}
+.app-shell[class*="theme-"] .dhikr-tabs button,
+.app-shell[class*="theme-"] .dhikr-tools button,
+.app-shell[class*="theme-"] .counter-badges span,
+.app-shell[class*="theme-"] .sleep-nav-button {
+  color: var(--theme-text) !important;
+  background-color: var(--theme-surface-strong) !important;
+  border-color: var(--theme-border) !important;
+}
+.app-shell[class*="theme-"] .dhikr-tabs .dhikr-tab-active {
+  color: var(--theme-text) !important;
+  background: color-mix(in srgb, var(--theme-accent) 22%, var(--theme-surface-strong)) !important;
+  border-color: var(--theme-accent) !important;
+}
+.app-shell[class*="theme-"] .dhikr-tools b,
+.app-shell[class*="theme-"] .sleep-progress,
+.app-shell[class*="theme-"] .location-breadcrumb {
+  color: var(--theme-muted) !important;
+}
+
+
+/* Higher-priority correction for legacy dark-mode rules that painted light dialogs with white text. */
+.app-shell.dark-mode[class*="theme-"] :is(.calendar-modal, .location-modal, .adhkar-modal, .card-create-modal, .sleep-modal, .dhikr-modal, .settings-modal, .sound-modal) :is(.calendar-sheet, .location-sheet, .adhkar-sheet, .card-create-sheet, .sleep-sheet, .dhikr-sheet, .settings-sheet, .sound-modal-card) {
+  color: var(--theme-text) !important;
+}
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-card,
+.app-shell.dark-mode[class*="theme-"] .card-create-modal .card-create-sheet {
+  background: linear-gradient(145deg, var(--theme-surface-strong), var(--theme-surface)) !important;
+  border-color: var(--theme-border) !important;
+}
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(h2, h3, p, strong, small, span, label),
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-card :is(h3, p, strong, small, span, label),
+.app-shell.dark-mode[class*="theme-"] .card-create-modal .card-create-sheet :is(h3, p, strong, small, span, label) {
+  color: var(--theme-text) !important;
+}
+
+.app-shell[class*="theme-"] .settings-modal .settings-row,
+.app-shell[class*="theme-"] .settings-modal .settings-subrow,
+.app-shell[class*="theme-"] .settings-modal .sound-setting,
+.app-shell[class*="theme-"] .settings-modal .adhkar-master-row,
+.app-shell[class*="theme-"] .settings-modal .adhkar-feature-row {
+  background: var(--theme-surface-strong) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-row,
+.app-shell[class*="theme-"] .settings-modal .settings-subrow,
+.app-shell[class*="theme-"] .settings-modal .sound-setting,
+.app-shell[class*="theme-"] .settings-modal .adhkar-master-row,
+.app-shell[class*="theme-"] .settings-modal .adhkar-feature-row {
+  background: var(--theme-surface-strong) !important;
+}
+.app-shell[class*="theme-"] .location-breadcrumb .active,
+.app-shell[class*="theme-"] .location-breadcrumb .done,
+.app-shell[class*="theme-"] .location-breadcrumb i {
+  color: var(--theme-accent) !important;
+}
+
+
+/* One continuous theme photo fills each square tile and its circular icon window. */
+.app-shell[class*="theme-"] .radial-utility-node {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node > img.utility-card-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+  opacity: .9;
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .radial-utility-node::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(8,12,15,.03) 0%, rgba(8,12,15,.12) 45%, rgba(8,12,15,.72) 100%);
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .radial-utility-node::before {
+  z-index: 2;
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 54px;
+  width: 54px !important;
+  height: 54px !important;
+  margin: 0 0 1px !important;
+  isolation: isolate;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > .utility-art-photo {
+  inset: -1px;
+  width: calc(100% + 2px) !important;
+  height: calc(100% + 2px) !important;
+  opacity: .96;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > svg {
+  width: 26px;
+  height: 26px;
+}
+.app-shell[class*="theme-"] .radial-utility-node > strong {
+  position: relative;
+  z-index: 3;
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.9) !important;
+}
+/* Nature keeps a clearly circular photo window inside its square tile. */
+.app-shell.theme-nature-calm .radial-utility-node > .utility-art {
+  border-radius: 50% !important;
+}
+
+
+/* Keep a crisp circular boundary while the same scene remains continuous behind it. */
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > .utility-art-photo {
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.app-shell.theme-nature-calm .radial-utility-node > .utility-art {
+  border: 2px solid rgba(255,255,255,.94) !important;
+  box-shadow: 0 0 0 2px rgba(52,70,55,.72), 0 4px 12px rgba(20,35,25,.34), inset 0 1px rgba(255,255,255,.8) !important;
+}
+
+/* Image-backed cards keep a dark text-safe area, even when the artwork is bright. */
+.app-shell[class*="theme-"] .radial-prayer-photo::after {
+  background: linear-gradient(180deg, rgba(8,12,15,.02) 0%, rgba(8,12,15,.12) 42%, rgba(8,12,15,.88) 100%) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > strong,
+.app-shell[class*="theme-"] .radial-prayer-card > time,
+.app-shell[class*="theme-"] .radial-prayer-card > time small,
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-index,
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-status {
+  color: #fff !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.92) !important;
+}
+.app-shell[class*="theme-"] .adhkar-card-wrap::before {
+  background: linear-gradient(180deg, rgba(8,12,15,.04) 0%, rgba(8,12,15,.18) 42%, rgba(8,12,15,.88) 100%) !important;
+}
+.app-shell[class*="theme-"] .adhkar-card-wrap .adhkar-card strong,
+.app-shell[class*="theme-"] .adhkar-card-wrap .adhkar-card small {
+  color: #fff !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.92) !important;
+}
+
+
+/* High-specificity label styling keeps names readable above every theme photo. */
+.app-shell[class*="theme-"] .radial-utility-node.radial-utility-all > strong {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.92) !important;
+}
+
+
+/* Center each glyph inside its own shaped plate in every theme, regardless of square/circle clipping. */
+.app-shell[class*="theme-"] :is(
+  .radial-prayer-icon,
+  .radial-utility-node > .utility-art,
+  .feature-icon,
+  .prayer-icon,
+  .next-prayer-icon,
+  .icon-button,
+  .theme-status-icon,
+  .theme-tool-icon,
+  .settings-row-icon,
+  .settings-title-icon,
+  .calendar-title-icon,
+  .location-title-icon,
+  .adhkar-icon,
+  .dhikr-icon-button,
+  .dhikr-confirm-icon,
+  .location-option-icon
+) {
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+}
+.app-shell[class*="theme-"] :is(
+  .radial-prayer-icon,
+  .radial-utility-node > .utility-art,
+  .feature-icon,
+  .prayer-icon,
+  .next-prayer-icon,
+  .icon-button,
+  .theme-status-icon,
+  .theme-tool-icon,
+  .settings-row-icon,
+  .settings-title-icon,
+  .calendar-title-icon,
+  .location-title-icon,
+  .adhkar-icon,
+  .dhikr-icon-button,
+  .dhikr-confirm-icon,
+  .location-option-icon
+) > svg,
+.app-shell[class*="theme-"] :is(
+  .radial-prayer-icon,
+  .radial-utility-node > .utility-art,
+  .feature-icon,
+  .prayer-icon,
+  .next-prayer-icon,
+  .icon-button,
+  .theme-status-icon,
+  .theme-tool-icon,
+  .settings-row-icon,
+  .settings-title-icon,
+  .calendar-title-icon,
+  .location-title-icon,
+  .adhkar-icon,
+  .dhikr-icon-button,
+  .dhikr-confirm-icon,
+  .location-option-icon
+) > img:not(.utility-art-photo) {
+  display: block !important;
+  position: relative !important;
+  inset: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node:hover > .utility-art {
+  transform: none !important;
+}
+
+
+/* Fix the actual visual issue: center the artwork in the whole square tile, not above its label. */
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 44px !important;
+  height: 44px !important;
+  flex: 0 0 44px !important;
+  margin: 0 !important;
+  transform: translate(-50%, -50%) !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node > strong {
+  position: absolute !important;
+  right: 2px !important;
+  bottom: 4px !important;
+  left: 2px !important;
+  z-index: 4 !important;
+  display: block !important;
+  max-width: calc(100% - 4px) !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  font: 800 9px/1.1 Cairo, sans-serif !important;
+  text-align: center !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node:hover > .utility-art {
+  transform: translate(-50%, -50%) !important;
+}
+
+/* Keep every prayer symbol and label centered, with enough room for the full Arabic name. */
+.app-shell[class*="theme-"] .radial-prayer-card {
+  overflow: hidden !important;
+  text-align: center !important;
+  justify-content: flex-start !important;
+  gap: 1px !important;
+  padding: 6px 8px !important;
+  box-sizing: border-box !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon {
+  order: 1 !important;
+  align-self: center !important;
+  flex: 0 0 36px !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 12px 0 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  transform: none !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > strong {
+  order: 2 !important;
+  position: relative !important;
+  z-index: 3 !important;
+  display: block !important;
+  align-self: center !important;
+  width: max-content !important;
+  max-width: calc(100% - 16px) !important;
+  margin: 3px 0 0 !important;
+  overflow: visible !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1.35 !important;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .78) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > time {
+  order: 3 !important;
+  position: relative !important;
+  z-index: 3 !important;
+  display: block !important;
+  align-self: center !important;
+  width: max-content !important;
+  max-width: calc(100% - 16px) !important;
+  margin: 0 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .78) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-index {
+  order: 0 !important;
+  top: 7px !important;
+  z-index: 3 !important;
+  left: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 14px !important;
+  padding: 0 !important;
+  font: 700 12px/14px Cairo, sans-serif !important;
+  transform: translateX(-50%) !important;
+  text-align: center !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-iqama {
+  order: 4 !important;
+  position: relative !important;
+  z-index: 3 !important;
+  display: block !important;
+  align-self: center !important;
+  max-width: calc(100% - 10px) !important;
+  overflow: hidden !important;
+  color: var(--theme-accent-strong) !important;
+  font: 700 8px/1.15 ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  direction: ltr !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .78) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-status {
+  order: 5 !important;
+  position: absolute !important;
+  right: 50% !important;
+  bottom: 7px !important;
+  z-index: 4 !important;
+  transform: translateX(50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--theme-accent) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font: 700 8px/1 Cairo, sans-serif !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+/* Twilight-to-daylight colors follow each prayer scene while staying legible over photography. */
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-blue {
+  color: #d7ebff !important;
+  background: rgba(52, 91, 132, .68) !important;
+  border: 1px solid rgba(195, 224, 255, .62) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-amber {
+  color: #ffe2a5 !important;
+  background: rgba(151, 99, 43, .68) !important;
+  border: 1px solid rgba(255, 225, 167, .66) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-yellow {
+  color: #fff0a8 !important;
+  background: rgba(139, 105, 34, .68) !important;
+  border: 1px solid rgba(255, 239, 170, .68) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-violet {
+  color: #f0ddff !important;
+  background: rgba(96, 72, 125, .68) !important;
+  border: 1px solid rgba(229, 207, 255, .62) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-orange {
+  color: #ffe0bd !important;
+  background: rgba(157, 77, 50, .7) !important;
+  border: 1px solid rgba(255, 211, 174, .7) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-indigo {
+  color: #dfe6ff !important;
+  background: rgba(59, 68, 117, .72) !important;
+  border: 1px solid rgba(205, 216, 255, .64) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+  color: inherit !important;
+  stroke: currentColor !important;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .48)) !important;
+}
+
+/* Prayer sun/moon glyphs use the same soft, image-like circular treatment as the feature backgrounds. */
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon {
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 34% 28%, rgba(255,255,255,.28), rgba(8,12,15,.62)) !important;
+  border: 1px solid rgba(255,255,255,.42) !important;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,.24), 0 5px 14px rgba(0,0,0,.25) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-blue,
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-indigo {
+  background: radial-gradient(circle at 34% 28%, rgba(145,190,230,.5), rgba(22,39,70,.82)) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-card > .radial-prayer-icon.icon-yellow {
+  background: radial-gradient(circle at 34% 28%, rgba(255,231,137,.88), rgba(158,94,35,.82)) !important;
+}
+
+/* Keep the selected prayer photo inside the two inner clock rings only. */
+#root .app-shell[class*="theme-"] .hero-content > .hero-clock-photo {
+  position: absolute !important;
+  z-index: 0 !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 424px !important;
+  height: 424px !important;
+  margin: 0 !important;
+  transform: translate(-50%, -50%) !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  clip-path: circle(50% at 50% 50%) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: .52 !important;
+  box-shadow: inset 0 0 0 999px rgba(8, 14, 18, .18) !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .radial-prayer-stage > .radial-orbit {
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .radial-prayer-stage > .radial-orbit-outer {
+  border: 1px solid rgba(255, 255, 255, .68) !important;
+  opacity: .95 !important;
+  box-shadow: 0 0 0 1px rgba(5, 12, 18, .55), 0 0 16px rgba(255, 255, 255, .2) !important;
+}
+#root .app-shell[class*="theme-"] .radial-prayer-stage > .radial-orbit-inner {
+  border: 1px dashed rgba(255, 255, 255, .58) !important;
+  opacity: .9 !important;
+  box-shadow: 0 0 0 1px rgba(5, 12, 18, .42), 0 0 12px rgba(255, 255, 255, .14) !important;
+}
+.app-shell[class*="theme-"] .radial-prayer-stage { isolation: isolate !important; }
+.app-shell[class*="theme-"] .hero-content > :not(.hero-clock-photo) {
+  position: relative !important;
+  z-index: 3 !important;
+}
+#root .app-shell[class*="theme-"] .hero-content::before {
+  z-index: 2 !important;
+  background: radial-gradient(circle, rgba(8, 12, 15, .10) 0 55%, var(--theme-glow) 56%, transparent 72%) !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .hero-content::after {
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* Center the icon itself first, then place its label below with a fixed five-pixel gap. */
+#root .app-shell[class*="theme-"] .radial-utility-node.radial-utility-all {
+  display: block !important;
+  width: 88px !important;
+  height: 88px !important;
+  min-width: 88px !important;
+  min-height: 88px !important;
+  margin: -44px 0 0 -44px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+#root .app-shell[class*="theme-"] .radial-utility-node.radial-utility-all > .utility-art {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  flex: 0 0 36px !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0 !important;
+  transform: translate(-50%, -50%) !important;
+}
+#root .app-shell[class*="theme-"] .radial-utility-node.radial-utility-all > strong {
+  position: absolute !important;
+  top: calc(50% + 23px) !important;
+  right: 3px !important;
+  bottom: auto !important;
+  left: 3px !important;
+  display: grid !important;
+  place-items: center !important;
+  width: calc(100% - 8px) !important;
+  max-width: none !important;
+  height: 16px !important;
+  margin: 0 !important;
+  padding: 0 2px !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  font: 800 8px/8px Cairo, sans-serif !important;
+}
+#root .app-shell[class*="theme-"] .radial-utility-node.radial-utility-all:hover > .utility-art {
+  transform: translate(-50%, -50%) !important;
+}
+
+/* Light theme clocks need bright ink over their newly visible prayer photographs. */
+#root .app-shell[class*="theme-"] .hero-content .hero-countdown,
+#root .app-shell[class*="theme-"] .hero-content .hero-countdown b,
+#root .app-shell[class*="theme-"] .hero-content .hero-eyebrow,
+#root .app-shell[class*="theme-"] .hero-content .location-label {
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .88), 0 0 18px rgba(0, 0, 0, .5) !important;
+}
+#root .app-shell[class*="theme-"] .hero-content .hero-countdown {
+  text-shadow: 0 2px 9px rgba(0, 0, 0, .9), 0 0 24px rgba(0, 0, 0, .68) !important;
+}
+
+
+/* Unified theme inheritance for secondary panels, controls, reader/player UI and portal dialogs. */
+.app-shell[class*="theme-"] :is(
+  .adhkar-sheet,
+  .calendar-sheet,
+  .location-sheet,
+  .sleep-sheet,
+  .sleep-reader-card,
+  .dhikr-sheet,
+  .reader-card,
+  .settings-sheet,
+  .sound-modal-card,
+  .card-create-sheet,
+  .banner-edit-sheet,
+  .background-modal-sheet,
+  .add-dhikr-card,
+  .dhikr-style-card
+) {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+
+.app-shell[class*="theme-"] :is(
+  .settings-topbar h2,
+  .settings-row strong,
+  .settings-subrow strong,
+  .sound-setting strong,
+  .prayer-setting-row strong,
+  .sound-modal-header h3,
+  .adhkar-topbar h2,
+  .dhikr-topbar h2,
+  .sleep-topbar h2,
+  .location-title-wrap h2,
+  .card-create-heading h3,
+  .nested-card-topbar h3,
+  .add-dhikr-heading h3,
+  .dhikr-style-heading h3,
+  .dhikr-style-color-heading strong,
+  .dhikr-style-color-section > strong,
+  .sleep-reader-heading,
+  .sleep-attribution,
+  .sleep-sacred-text
+) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] :is(
+  .settings-topbar p,
+  .settings-row small,
+  .settings-subrow small,
+  .sound-setting small,
+  .prayer-setting-row small,
+  .sound-modal-header p,
+  .adhkar-intro,
+  .sleep-topbar p,
+  .location-title-wrap p,
+  .card-create-sheet > p,
+  .custom-card-form label,
+  .custom-card-form .optional-field,
+  .add-dhikr-card label,
+  .add-dhikr-heading p,
+  .dhikr-style-control label,
+  .dhikr-style-control output,
+  .sleep-attribution span,
+  .settings-prayer-list .prayer-setting-control span
+) {
+  color: var(--theme-muted, #747d75) !important;
+}
+
+/* Theme-colored surfaces replace decorative fixed light/dark gradients on preference cards. */
+.app-shell[class*="theme-"] :is(
+  .settings-row,
+  .settings-subrow,
+  .sound-setting,
+  .prayer-setting-row,
+  .adhkar-master-row,
+  .adhkar-feature-row,
+  .background-toggle-row,
+  .background-coming-soon,
+  .sleep-choice,
+  .sleep-reader-card,
+  .reader-card
+) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+}
+.app-shell[class*="theme-"] :is(.settings-row, .settings-subrow, .sound-setting)::before {
+  background: var(--theme-accent, #718b78) !important;
+  opacity: .045 !important;
+}
+.app-shell[class*="theme-"] :is(.settings-row, .settings-subrow, .sound-setting)::after {
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  background: transparent !important;
+  opacity: .35 !important;
+}
+.app-shell[class*="theme-"] :is(.settings-row-icon, .settings-title-icon, .sleep-choice-art, .location-title-icon, .dhikr-confirm-icon) {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] :is(.settings-row strong, .settings-subrow strong, .sound-setting strong, .settings-row small, .settings-subrow small, .sound-setting small) {
+  color: var(--theme-text, #263a36) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] :is(.settings-row > svg, .settings-subrow > svg, .sound-setting > svg) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] .sleep-choice::before {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--theme-accent) 8%, transparent), transparent) !important;
+  opacity: 1 !important;
+}
+.app-shell[class*="theme-"] :is(.sleep-choice strong, .sleep-choice small) {
+  color: var(--theme-text, #263a36) !important;
+  text-shadow: none !important;
+}
+
+/* Inputs, secondary actions, back/close buttons and in-panel menus use the same surface/ink pair. */
+.app-shell[class*="theme-"] :is(
+  .settings-close,
+  .settings-back-link,
+  .adhkar-back,
+  .adhkar-edit,
+  .sleep-back,
+  .sleep-close,
+  .dhikr-icon-button,
+  .dhikr-back-button,
+  .add-dhikr-back,
+  .card-create-heading button,
+  .sound-modal-header button,
+  .location-close,
+  .settings-upload,
+  .sound-actions button,
+  .sound-actions label,
+  .sound-modal-actions button,
+  .sound-modal-actions label,
+  .background-delete-button,
+  .background-reset,
+  .fetch-icon-button,
+  .card-upload,
+  .card-create-actions button,
+  .nested-card-actions button,
+  .nested-type-choice button,
+  .card-create-choice button,
+  .adhkar-card-menu,
+  .adhkar-arrange-panel,
+  .dhikr-banner-menu,
+  .nested-card-menu,
+  .nested-dhikr-list button,
+  .voice-profile-menu,
+  .voice-player-menu,
+  .voice-chooser-button,
+  .voice-chooser-window,
+  .dhikr-tabs button,
+  .dhikr-tools button,
+  .counter-badges span,
+  .sleep-nav-button,
+  .dhikr-style-toggles button,
+  .dhikr-style-done,
+  .dhikr-style-heading button,
+  .dhikr-style-tool,
+  .parchment-edit-button,
+  .parchment-delete-button,
+  .dhikr-player-download-row,
+  .audio-download-item,
+  .audio-download-actions button
+) {
+  color: var(--theme-text, #263a36) !important;
+  background-color: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] :is(
+  .settings-row,
+  .settings-subrow,
+  .sound-setting,
+  .prayer-setting-row,
+  .adhkar-master-row,
+  .adhkar-feature-row,
+  .background-toggle-row,
+  .background-coming-soon,
+  .sleep-choice,
+  .dhikr-player,
+  .dhikr-player-summary,
+  .dhikr-tools,
+  .dhikr-tabs,
+  .counter-badges,
+  .dhikr-artboard
+) {
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.settings-sheet, .sound-modal-card, .card-create-sheet, .add-dhikr-card, .background-toggle-row, .background-coming-soon, .adhkar-arrange-panel, .adhkar-card-menu, .dhikr-banner-menu, .nested-card-menu, .nested-dhikr-list button, .voice-profile-menu, .voice-player-menu, .voice-chooser-window, .dhikr-player, .dhikr-player-summary, .dhikr-tools, .dhikr-tabs, .counter-badges, .dhikr-player-download-row, .audio-download-item, .dhikr-style-card, .dhikr-style-preview, .dhikr-style-toggles button) {
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  color: var(--theme-text, #263a36) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.settings-back-link, .voice-player-label, .voice-chooser-name small, .dhikr-tools b, .sleep-progress, .adhkar-arrange-panel small, .nested-dhikr-list small, .dhikr-style-control output) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] :is(.adhkar-card-menu button, .dhikr-banner-menu button, .nested-card-menu button, .nested-dhikr-list button, .voice-profile-menu button, .voice-player-menu button, .voice-chooser-name, .voice-chooser-heading, .voice-chooser-heading button, .voice-chooser-more, .voice-chooser-preview) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] :is(.adhkar-card-menu button:hover, .dhikr-banner-menu button:hover, .nested-card-menu button:hover, .nested-dhikr-list button:hover, .voice-profile-menu button:hover, .voice-player-menu button:hover, .voice-chooser-row.is-selected, .voice-chooser-name:hover, .voice-chooser-more:hover, .voice-chooser-preview:hover, .voice-chooser-preview.is-playing) {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 16%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.app-shell[class*="theme-"] :is(.dhikr-tabs .dhikr-tab-active, .dhikr-style-toggles button.active) {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 24%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+.app-shell[class*="theme-"] :is(input, textarea, select) {
+  color: var(--theme-text, #263a36) !important;
+  background-color: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  accent-color: var(--theme-accent, #718b78);
+}
+.app-shell[class*="theme-"] :is(input, textarea, select)::placeholder {
+  color: var(--theme-muted, #747d75) !important;
+  opacity: .85;
+}
+.app-shell[class*="theme-"] .settings-prayer-list .prayer-setting-control span {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] .adhkar-card-menu button:hover,
+.app-shell[class*="theme-"] .dhikr-banner-menu button:hover,
+.app-shell[class*="theme-"] .nested-card-menu button:hover {
+  background-color: color-mix(in srgb, var(--theme-accent, #718b78) 16%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+
+/* Reader/player controls must not use a forced-white ink that disappears on pale theme surfaces. */
+.app-shell[class*="theme-"] .dhikr-player {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface, #fffdf8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-player :is(label, span, small, strong, button, output) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .dhikr-player input[type="range"] { accent-color: var(--theme-accent, #718b78) !important; }
+.app-shell[class*="theme-"] .dhikr-player :is(button, .voice-chooser-button, .voice-player-menu-button) {
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-player :is(.dhikr-player-summary, .voice-chooser-window, .voice-profile-menu, .voice-player-menu) {
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .dhikr-player :is(.dhikr-player-summary, .voice-chooser-window, .voice-profile-menu, .voice-player-menu) * {
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] .dhikr-style-preview {
+  color: var(--theme-text, #263a36);
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 8%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-style-preview p,
+.app-shell[class*="theme-"] .dhikr-style-preview strong { color: inherit; }
+.app-shell[class*="theme-"] .dhikr-style-done,
+.app-shell[class*="theme-"] .dhikr-picker-confirm { color: var(--theme-text, #263a36) !important; background: var(--theme-surface-strong, #f4f1e8) !important; border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important; }
+
+/* createPortal content is mounted under body; Home copies the active shell tokens there. */
+.voice-chooser-overlay .voice-chooser-window,
+.audio-download-overlay .audio-download-card,
+.dhikr-picker-overlay .dhikr-picker-card {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.voice-chooser-overlay :is(.voice-chooser-heading, .voice-chooser-name, .voice-chooser-name small, .voice-chooser-heading button, .voice-chooser-more, .voice-chooser-preview),
+.audio-download-overlay :is(.audio-download-heading h3, .audio-download-heading p, .audio-download-choice strong, .audio-download-choice small, .audio-download-item label),
+.dhikr-picker-overlay :is(.dhikr-picker-header h3, .dhikr-picker-values label, .dhikr-picker-palette-section h4, .dhikr-picker-rgb span) {
+  color: var(--theme-text, #263a36) !important;
+}
+.voice-chooser-overlay :is(.voice-chooser-button, .voice-chooser-add, .voice-chooser-row, .voice-chooser-name, .voice-chooser-more, .voice-chooser-heading button, .voice-profile-menu, .voice-profile-menu button),
+.audio-download-overlay :is(.audio-download-choice button, .audio-download-item, .audio-download-item button, .audio-download-actions button, .audio-download-heading > button),
+.dhikr-picker-overlay :is(.dhikr-picker-header button, .dhikr-picker-values input, .dhikr-picker-values select, .dhikr-picker-add-color, .dhikr-picker-cancel) {
+  color: var(--theme-text, #263a36) !important;
+  background-color: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.voice-chooser-overlay .voice-chooser-row.is-selected,
+.voice-chooser-overlay :is(.voice-chooser-name:hover, .voice-chooser-more:hover, .voice-chooser-preview:hover, .voice-chooser-preview.is-playing),
+.audio-download-overlay .audio-download-item,
+.dhikr-picker-overlay .dhikr-picker-palette-section {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 12%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.voice-chooser-overlay .voice-chooser-name small,
+.audio-download-overlay .audio-download-heading p,
+.audio-download-overlay .audio-download-choice small {
+  color: var(--theme-muted, #747d75) !important;
+}
+.audio-download-overlay .audio-download-item input:checked + i {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-accent, #718b78) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+.dhikr-picker-overlay .dhikr-picker-card { box-shadow: 0 24px 65px rgba(0, 0, 0, .28); }
+.dhikr-picker-overlay .dhikr-picker-actions button { color: var(--theme-text, #263a36) !important; background: var(--theme-surface-strong, #f4f1e8) !important; border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important; }
+
+/* The typography preview intentionally keeps the user's chosen text and heading colors. */
+.app-shell[class*="theme-"] .dhikr-style-preview p { color: var(--dhikr-text-color, var(--theme-text)) !important; }
+.app-shell[class*="theme-"] .dhikr-style-preview strong { color: var(--dhikr-title-color, var(--theme-text)) !important; }
+
+
+/* Final contrast sweep: theme the canvas around the parchment/counter and missed secondary dialogs. */
+#root .app-shell[class*="theme-"] .dhikr-modal {
+  background-color: transparent !important;
+}
+#root .app-shell[class*="theme-"] .dhikr-modal .dhikr-sheet {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+#root .app-shell[class*="theme-"] .dhikr-modal .dhikr-scroll-area {
+  background: transparent !important;
+}
+#root .app-shell[class*="theme-"] .dhikr-modal .dhikr-artboard {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: inset 0 0 0 1px var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+#root .app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-sheet {
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+}
+
+/* Secondary back/close controls that were not covered by the first theme pass. */
+.app-shell[class*="theme-"] :is(
+  .calendar-close,
+  .add-dhikr-close,
+  .card-create-back,
+  .voice-manager-heading button,
+  .voice-clip-row button
+) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] :is(.settings-back-link, .location-back-link) {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+.app-shell[class*="theme-"] :is(.calendar-today, .calendar-navigation button, .voice-clip-row, .voice-upload-label, .voice-manager-actions .secondary) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.voice-manager-heading h3, .voice-clip-row b, .voice-order-title) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] :is(.voice-manager-heading p, .voice-clip-row span, .voice-manager-card > label:not(.voice-upload-label)) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] :is(.voice-manager-card, .dhikr-confirm-card) {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .voice-manager-actions button:not(.secondary) {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 22%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-confirm-card :is(h3, p, button) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .dhikr-confirm-card .dhikr-confirm-icon {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface, #fffdf8)) !important;
+}
+
+/* Voice management can also render in a portal attached directly to body. */
+.voice-manager-overlay .voice-manager-card {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.voice-manager-overlay .voice-manager-heading h3,
+.voice-manager-overlay .voice-clip-row b {
+  color: var(--theme-text, #263a36) !important;
+}
+.voice-manager-overlay :is(.voice-manager-heading p, .voice-clip-row span, .voice-manager-card > label:not(.voice-upload-label)) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.voice-manager-overlay :is(.voice-manager-heading button, .voice-clip-row, .voice-clip-row button, .voice-upload-label, .voice-manager-actions .secondary) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.voice-manager-overlay .voice-manager-actions button:not(.secondary) {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 22%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+
+
+/* Theme the reader's side arrows and remaining form/dialog actions without altering dhikr text styling. */
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-side-arrow {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-side-arrow:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.app-shell[class*="theme-"] :is(.add-dhikr-heading h3, .calendar-title-wrap h2, .calendar-navigation strong, .calendar-day header, .calendar-times b) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] :is(.calendar-title-wrap p, .calendar-title-wrap small, .calendar-legend, .calendar-weekdays, .calendar-hijri, .calendar-times, .calendar-note) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] .calendar-title-icon {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 16%, var(--theme-surface, #fffdf8)) !important;
+}
+.app-shell[class*="theme-"] .calendar-sheet .calendar-day {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .calendar-sheet .calendar-day-current {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 12%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+.app-shell[class*="theme-"] .calendar-sheet .calendar-day header small {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface, #fffdf8)) !important;
+}
+.app-shell[class*="theme-"] :is(.add-dhikr-actions button, .dhikr-confirm-actions button) {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 20%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.add-dhikr-actions button.secondary, .dhikr-confirm-actions button.secondary) {
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+}
+.app-shell[class*="theme-"] :is(.add-dhikr-actions button:hover, .dhikr-confirm-actions button:hover) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 28%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+
+
+/* Comprehensive final pass: nested controls and secondary surfaces missed by the first theme sweep. */
+.app-shell[class*="theme-"] :is(
+  .settings-choice-row button,
+  .adhkar-choice-row button,
+  .adhkar-sound-modes button,
+  .settings-row button,
+  .adhkar-audio-trigger,
+  .sound-setting-button,
+  .dhikr-theme-toggle,
+  .quick-menu button,
+  .date-actions .icon-button
+) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] :is(.settings-choice-row button.active, .adhkar-choice-row button.active, .adhkar-sound-modes button.active) {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 25%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+.app-shell[class*="theme-"] :is(.settings-choice-row button:hover, .adhkar-choice-row button:hover, .adhkar-sound-modes button:hover, .settings-row button:hover, .adhkar-audio-trigger:hover, .sound-setting-button:hover, .dhikr-theme-toggle:hover, .quick-menu button:hover, .date-actions .icon-button:hover) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 16%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.app-shell[class*="theme-"] .adhkar-top-actions .adhkar-edit,
+.app-shell[class*="theme-"] .adhkar-top-actions .adhkar-edit:hover,
+.app-shell[class*="theme-"] .adhkar-top-actions .adhkar-edit svg {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: none !important;
+}
+.app-shell[class*="theme-"] .settings-toggle-wrap i {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 16%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .settings-toggle-wrap input:checked + i {
+  background: var(--theme-accent, #718b78) !important;
+  border-color: var(--theme-accent-strong, #567b68) !important;
+}
+.app-shell[class*="theme-"] .settings-toggle-wrap i::after {
+  background: var(--theme-surface, #fffdf8) !important;
+}
+.app-shell[class*="theme-"] :is(.sound-file-status, .adhkar-time-result) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .sound-modal-actions .sound-delete {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 14%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .sound-modal-actions .sound-delete:hover {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 24%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.app-shell[class*="theme-"] .quick-menu {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+
+/* Dhikr browsing keeps the user's chosen text/title inks but themes every surrounding surface and control. */
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-card {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface, #fffdf8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-card.is-active {
+  border-color: var(--theme-accent, #718b78) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--theme-accent, #718b78) 18%, transparent), 0 10px 24px rgba(0, 0, 0, .1) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-copy h3 {
+  color: var(--dhikr-title-color, var(--theme-accent-strong, #567b68)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-copy .dhikr-text,
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-copy .dhikr-browse-attribution {
+  color: var(--dhikr-text-color, var(--theme-text, #263a36)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-copy small:not(.dhikr-browse-attribution) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-attribution {
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-counter {
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-count,
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-count.is-complete {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 24%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-count:hover {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 34%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-reset,
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-delete {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-reset:hover,
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-delete:hover {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 20%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-meta {
+  color: var(--theme-muted, #747d75) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-meta svg,
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-browse-divider {
+  color: var(--theme-accent-strong, #567b68) !important;
+}
+
+/* Fine controls inside the typography editor and its preview. */
+.app-shell[class*="theme-"] .dhikr-style-heading-copy p {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] :is(.dhikr-style-controls .dhikr-style-control, .dhikr-style-colors .dhikr-style-color-section) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.dhikr-style-controls .dhikr-style-control label, .dhikr-style-color-heading > strong) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] :is(.dhikr-style-controls .dhikr-style-control output, .dhikr-style-color-heading output) {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 12%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-style-preview-label {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.dhikr-color-palette button, .dhikr-custom-color) {
+  border-color: var(--theme-surface, #fffdf8) !important;
+  box-shadow: 0 0 0 1px var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .dhikr-color-palette button.selected {
+  box-shadow: 0 0 0 2px var(--theme-accent, #718b78), 0 0 0 4px var(--theme-surface, #fffdf8) !important;
+}
+.app-shell[class*="theme-"] .dhikr-custom-color {
+  color: var(--theme-text, #263a36) !important;
+}
+
+/* Voice manager includes saved-reader cards and their mini actions, not only the clip rows. */
+.app-shell[class*="theme-"] :is(.saved-voice-list, .saved-voice-row) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.saved-voice-list > strong, .saved-voice-row, .saved-voice-row span) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .saved-voice-row small {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] :is(.saved-voice-row button, .voice-profile-menu-button, .voice-clip-delete) {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: var(--theme-surface, #fffdf8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] :is(.saved-voice-row button:hover, .voice-profile-menu-button:hover, .voice-clip-delete:hover) {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.voice-chooser-overlay .voice-profile-menu button:last-child {
+  color: var(--theme-accent-strong, #567b68) !important;
+}
+
+/* Global portals (Radix dialogs, sheets and toast notifications) also inherit body theme tokens. */
+body :is([data-slot="dialog-content"], [data-slot="alert-dialog-content"], [data-slot="sheet-content"]) {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+body :is([data-slot="dialog-title"], [data-slot="alert-dialog-title"], [data-slot="sheet-title"], [data-slot="dialog-description"], [data-slot="alert-dialog-description"], [data-slot="sheet-description"]) {
+  color: var(--theme-text, #263a36) !important;
+}
+body :is([data-slot="dialog-close"], [data-slot="sheet-close"], [data-slot="alert-dialog-cancel"]) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+body [data-sonner-toast],
+body .arabic-toast {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+body [data-sonner-toast] :is([data-title], [data-description]) {
+  color: var(--theme-text, #263a36) !important;
+}
+
+
+/* Final specificity pass: legacy dark-mode rules must never override the active palette. */
+.app-shell[class*="theme-"] .settings-modal .settings-sheet,
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(.settings-topbar h2, .settings-topbar p, .settings-row strong, .settings-row small, .settings-subrow strong, .settings-subrow small, .sound-setting strong, .sound-setting small, .prayer-setting-row strong, .prayer-setting-row small),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(.settings-topbar h2, .settings-topbar p, .settings-row strong, .settings-row small, .settings-subrow strong, .settings-subrow small, .sound-setting strong, .sound-setting small, .prayer-setting-row strong, .prayer-setting-row small) {
+  color: var(--theme-text, #263a36) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .adhkar-master-row, .adhkar-feature-row),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .adhkar-master-row, .adhkar-feature-row) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--theme-text, #263a36) 7%, transparent) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(.settings-close, .settings-back-link),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(.settings-close, .settings-back-link) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-sheet .settings-back-link,
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet .settings-back-link {
+  min-height: 36px;
+  padding: 7px 11px;
+  border-radius: 11px;
+  gap: 7px;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(input, textarea, select),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(input, textarea, select) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface, #fffdf8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  accent-color: var(--theme-accent, #718b78) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(.settings-row-icon, .settings-title-icon, .adhkar-audio-trigger),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(.settings-row-icon, .settings-title-icon, .adhkar-audio-trigger) {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+
+/* Keep the listening/browsing action bar and each action on the same theme surface. */
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools,
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--theme-text, #263a36) 10%, transparent) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools button,
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools button {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface, #fffdf8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--theme-text, #263a36) 8%, transparent) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools button :is(svg, b),
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools button :is(svg, b),
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools > b,
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools > b {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools button:hover,
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools button:hover,
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools button.is-playing,
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools button.is-playing {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 24%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+
+
+/* Legacy dark mode gave each toolbar label its own dark tile; keep labels transparent inside themed buttons. */
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools b,
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools b {
+  color: var(--theme-text, #263a36) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] .dhikr-modal .dhikr-tools,
+.app-shell.dark-mode[class*="theme-"] .dhikr-modal .dhikr-tools {
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+
+
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(.settings-topbar p, .settings-row small, .settings-subrow small, .sound-setting small, .prayer-setting-row small),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(.settings-topbar p, .settings-row small, .settings-subrow small, .sound-setting small, .prayer-setting-row small) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .settings-sheet :is(.settings-close:hover, .settings-back-link:hover),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .settings-sheet :is(.settings-close:hover, .settings-back-link:hover) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 14%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+
+
+/* The first saved-reader option had a hard-coded black ink that broke dark palettes. */
+body .voice-chooser-overlay .voice-chooser-list .voice-chooser-row:first-of-type .voice-chooser-name {
+  color: var(--theme-text, #263a36) !important;
+}
+body .voice-chooser-overlay .voice-chooser-list .voice-chooser-row:first-of-type .voice-chooser-name small {
+  color: var(--theme-muted, #747d75) !important;
+}
+
+
+/* Audio and adhan-video dialogs: override legacy dark-mode tiles at every nested level. */
+.app-shell[class*="theme-"] .sound-modal .sound-modal-card,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-card {
+  color: var(--theme-text, #263a36) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #f4f1e8), var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-header button,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-header button {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--theme-text, #263a36) 8%, transparent) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-header h3,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-header h3 {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-header p,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-header p {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-header > svg,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-header > svg {
+  color: var(--theme-accent-strong, #567b68) !important;
+}
+.app-shell[class*="theme-"] .sound-modal :is(.background-toggle-row, .background-coming-soon, .sound-file-status, .adhan-preview),
+.app-shell.dark-mode[class*="theme-"] .sound-modal :is(.background-toggle-row, .background-coming-soon, .sound-file-status, .adhan-preview) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 7px 18px color-mix(in srgb, var(--theme-text, #263a36) 7%, transparent) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] .sound-modal :is(.background-toggle-row strong, .background-coming-soon strong, .sound-file-status),
+.app-shell.dark-mode[class*="theme-"] .sound-modal :is(.background-toggle-row strong, .background-coming-soon strong, .sound-file-status) {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .sound-modal :is(.background-toggle-row small, .background-coming-soon small),
+.app-shell.dark-mode[class*="theme-"] .sound-modal :is(.background-toggle-row small, .background-coming-soon small) {
+  color: var(--theme-muted, #747d75) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .background-coming-soon > svg,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .background-coming-soon > svg {
+  color: var(--theme-accent-strong, #567b68) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .background-coming-soon::before,
+.app-shell[class*="theme-"] .sound-modal .background-coming-soon::after,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .background-coming-soon::before,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .background-coming-soon::after {
+  border-color: color-mix(in srgb, var(--theme-accent, #718b78) 28%, transparent) !important;
+}
+.app-shell[class*="theme-"] .sound-modal :is(.settings-toggle-wrap i, .background-toggle-row .settings-toggle-wrap i),
+.app-shell.dark-mode[class*="theme-"] .sound-modal :is(.settings-toggle-wrap i, .background-toggle-row .settings-toggle-wrap i) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 16%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .settings-toggle-wrap input:checked + i,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .settings-toggle-wrap input:checked + i {
+  background: var(--theme-accent, #718b78) !important;
+  border-color: var(--theme-accent-strong, #567b68) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .settings-toggle-wrap i::after,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .settings-toggle-wrap i::after {
+  background: var(--theme-surface, #fffdf8) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .background-video-manager,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .background-video-manager {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .sound-modal :is(.settings-upload, .background-delete-button),
+.app-shell.dark-mode[class*="theme-"] .sound-modal :is(.settings-upload, .background-delete-button) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface, #fffdf8) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--theme-text, #263a36) 8%, transparent) !important;
+}
+.app-shell[class*="theme-"] .sound-modal :is(.settings-upload:hover, .background-delete-button:hover),
+.app-shell.dark-mode[class*="theme-"] .sound-modal :is(.settings-upload:hover, .background-delete-button:hover) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 16%, var(--theme-surface, #fffdf8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-actions,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-actions {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-actions :is(button, label),
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-actions :is(button, label) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--theme-text, #263a36) 8%, transparent) !important;
+  text-shadow: none !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-actions :is(button:hover, label:hover),
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-actions :is(button:hover, label:hover) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .sound-modal-actions .sound-delete,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .sound-modal-actions .sound-delete {
+  color: var(--theme-accent-strong, #567b68) !important;
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 13%, var(--theme-surface-strong, #f4f1e8)) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .adhan-preview video,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .adhan-preview video {
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .sound-modal .adhan-preview div,
+.app-shell.dark-mode[class*="theme-"] .sound-modal .adhan-preview div {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-surface, #fffdf8) 94%, transparent) !important;
+}
+
+
+/* The adhan settings page has a second video manager/preview outside the video dialog. */
+.app-shell[class*="theme-"] .settings-modal .background-video-manager,
+.app-shell.dark-mode[class*="theme-"] .settings-modal .background-video-manager {
+  color: var(--theme-text, #263a36) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .background-video-manager :is(.settings-upload, .background-delete-button),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .background-video-manager :is(.settings-upload, .background-delete-button) {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border: 1px solid var(--theme-border, rgba(80, 100, 88, .24)) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--theme-text, #263a36) 8%, transparent) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .background-video-manager :is(.settings-upload:hover, .background-delete-button:hover),
+.app-shell.dark-mode[class*="theme-"] .settings-modal .background-video-manager :is(.settings-upload:hover, .background-delete-button:hover) {
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface-strong, #f4f1e8)) !important;
+  border-color: var(--theme-accent, #718b78) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .adhan-preview,
+.app-shell.dark-mode[class*="theme-"] .settings-modal .adhan-preview {
+  color: var(--theme-text, #263a36) !important;
+  background: var(--theme-surface-strong, #f4f1e8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .adhan-preview video,
+.app-shell.dark-mode[class*="theme-"] .settings-modal .adhan-preview video {
+  background: var(--theme-surface, #fffdf8) !important;
+  border-color: var(--theme-border, rgba(80, 100, 88, .24)) !important;
+}
+.app-shell[class*="theme-"] .settings-modal .adhan-preview div,
+.app-shell.dark-mode[class*="theme-"] .settings-modal .adhan-preview div {
+  color: var(--theme-text, #263a36) !important;
+  background: color-mix(in srgb, var(--theme-surface, #fffdf8) 94%, transparent) !important;
+}
+
+/* Topic-specific settings artwork, tinted through the active theme tokens. */
+#root .app-shell[class*="theme-"] .settings-modal .settings-sheet {
+  background:
+    radial-gradient(ellipse at 8% 4%, color-mix(in srgb, var(--theme-accent) 22%, transparent), transparent 26rem),
+    radial-gradient(ellipse at 95% 96%, color-mix(in srgb, var(--theme-glow) 55%, transparent), transparent 24rem),
+    repeating-linear-gradient(135deg, color-mix(in srgb, var(--theme-border) 18%, transparent) 0 1px, transparent 1px 30px),
+    linear-gradient(145deg, var(--theme-surface-strong), var(--theme-surface)) !important;
+  border-color: var(--theme-border) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  color: var(--theme-text) !important;
+  border-color: var(--theme-border) !important;
+  background:
+    radial-gradient(ellipse at 10% 100%, color-mix(in srgb, var(--settings-motif-color, var(--theme-accent)) 24%, transparent), transparent 58%),
+    repeating-linear-gradient(135deg, color-mix(in srgb, var(--theme-border) 17%, transparent) 0 1px, transparent 1px 24px),
+    linear-gradient(145deg, var(--theme-surface-strong), var(--theme-surface)) !important;
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--theme-text) 12%, transparent), inset 0 1px color-mix(in srgb, var(--theme-text) 9%, transparent) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) > :not(.settings-card-art) {
+  position: relative;
+  z-index: 2;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) .settings-card-art,
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card .settings-card-art {
+  position: absolute !important;
+  inset-inline-start: -8px !important;
+  bottom: -30px !important;
+  z-index: 1 !important;
+  width: 142px !important;
+  height: 142px !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: visible !important;
+  color: var(--settings-motif-color, var(--theme-accent-strong)) !important;
+  opacity: .19 !important;
+  transform: rotate(-13deg) !important;
+  pointer-events: none !important;
+  transition: transform .3s ease, opacity .3s ease !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) .settings-card-art svg,
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card .settings-card-art svg {
+  width: 100% !important;
+  height: 100% !important;
+  stroke-width: 1.05 !important;
+  filter: drop-shadow(0 7px 14px color-mix(in srgb, var(--settings-motif-color, var(--theme-accent)) 35%, transparent));
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting-button):hover .settings-card-art {
+  opacity: .27 !important;
+  transform: rotate(-5deg) scale(1.06) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-general { --settings-motif-color: var(--theme-accent-strong); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-appearance { --settings-motif-color: var(--theme-accent); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-prayer { --settings-motif-color: var(--theme-accent-strong); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-video,
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-video-modal { --settings-motif-color: var(--theme-accent); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-sounds,
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-sound { --settings-motif-color: var(--theme-accent-strong); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-alerts,
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-alert-before,
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-alert-adjust,
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-alert-iqama { --settings-motif-color: var(--theme-accent); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-sound-before { --settings-motif-color: var(--theme-accent); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-sound-adhan { --settings-motif-color: var(--theme-accent-strong); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-sound-iqama { --settings-motif-color: var(--theme-accent); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-prayer-list .prayer-setting-row {
+  border-radius: 20px !important;
+  text-align: center !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .settings-prayer-list .prayer-setting-row .settings-card-art {
+  inset-inline-start: 50% !important;
+  bottom: -42px !important;
+  transform: translateX(-50%) rotate(-13deg) !important;
+  opacity: .13 !important;
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card:is(.settings-visual-video-modal, .settings-visual-sound-modal) {
+  isolation: isolate !important;
+  overflow: hidden !important;
+  color: var(--theme-text) !important;
+  border-color: var(--theme-border) !important;
+  background:
+    radial-gradient(ellipse at 8% 100%, color-mix(in srgb, var(--settings-motif-color, var(--theme-accent)) 25%, transparent), transparent 62%),
+    repeating-linear-gradient(135deg, color-mix(in srgb, var(--theme-border) 16%, transparent) 0 1px, transparent 1px 25px),
+    linear-gradient(145deg, var(--theme-surface-strong), var(--theme-surface)) !important;
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card:is(.settings-visual-video-modal, .settings-visual-sound-modal) > :not(.settings-card-art) {
+  position: relative;
+  z-index: 2;
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card .settings-card-art {
+  inset-inline-start: auto !important;
+  right: -18px !important;
+  bottom: -42px !important;
+  width: 175px !important;
+  height: 175px !important;
+  opacity: .13 !important;
+}
+@media (max-width: 700px) {
+  #root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting) .settings-card-art {
+    width: 112px !important;
+    height: 112px !important;
+    inset-inline-start: -20px !important;
+    bottom: -28px !important;
+    opacity: .14 !important;
+  }
+}
+
+/* Appearance settings: category chooser and compact theme cards. */
+#root .app-shell[class*="theme-"] .settings-modal .theme-category-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-category-list > .settings-back-link {
+  grid-column: 1 / -1 !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-category-list > .settings-theme-category {
+  min-height: 190px !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-category-list > .settings-theme-category-pending {
+  cursor: not-allowed !important;
+  opacity: .64 !important;
+  filter: saturate(.68) !important;
+  transform: none !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--theme-border) 80%, transparent) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-category-list > .settings-theme-category-pending:hover {
+  transform: none !important;
+  filter: saturate(.68) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-settings-list {
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-content: start;
+  gap: 14px !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-settings-list > .settings-back-link,
+#root .app-shell[class*="theme-"] .settings-modal .theme-settings-list > .theme-settings-intro,
+#root .app-shell[class*="theme-"] .settings-modal .theme-settings-list > .theme-chooser-grid {
+  grid-column: 1 / -1 !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 13px !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card {
+  min-width: 0;
+  min-height: 150px;
+  display: grid !important;
+  position: relative !important;
+  grid-template-columns: 42px minmax(0, 1fr) 30px !important;
+  align-items: center !important;
+  gap: 12px !important;
+  overflow: hidden !important;
+  padding: 16px !important;
+  border: 1px solid color-mix(in srgb, var(--theme-border) 65%, white) !important;
+  border-radius: 21px !important;
+  text-align: right !important;
+  transition: transform .2s ease, box-shadow .2s ease, outline-color .2s ease !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 15px 28px color-mix(in srgb, var(--theme-text) 20%, transparent), inset 0 0 0 1px rgba(255,255,255,.25) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card.is-selected {
+  outline: 3px solid var(--theme-accent-strong) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--theme-accent) 17%, transparent), 0 15px 28px color-mix(in srgb, var(--theme-text) 22%, transparent) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card .theme-chooser-swatch {
+  width: 42px !important;
+  height: 42px !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 1px solid rgba(255,255,255,.55) !important;
+  border-radius: 14px !important;
+  color: #fff !important;
+  background: color-mix(in srgb, var(--theme-accent) 48%, rgba(0,0,0,.45)) !important;
+  font-size: 11px !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card .theme-chooser-copy {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card .theme-chooser-copy strong {
+  font: 800 15px/1.35 "Cairo", sans-serif !important;
+  text-wrap: balance;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card .theme-chooser-copy small {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 10px !important;
+  line-height: 1.55 !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card .theme-chooser-copy em {
+  font-size: 9px !important;
+  font-style: normal;
+  letter-spacing: .02em;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card .theme-chooser-check {
+  width: 28px !important;
+  height: 28px !important;
+  display: grid;
+  place-self: start end;
+  padding: 5px;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 50%;
+  color: var(--theme-surface, #fff) !important;
+  background: var(--theme-accent-strong) !important;
+  filter: drop-shadow(0 3px 7px rgba(0,0,0,.35));
+  stroke-width: 3px;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-settings-intro {
+  min-height: 82px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px 20px !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 18px !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .theme-settings-intro > :not(.settings-card-art) {
+  z-index: 2;
+}
+@media (max-width: 700px) {
+  #root .app-shell[class*="theme-"] .settings-modal .theme-category-list,
+  #root .app-shell[class*="theme-"] .settings-modal .theme-chooser-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  #root .app-shell[class*="theme-"] .settings-modal .theme-category-list > .settings-theme-category {
+    min-height: 145px !important;
+  }
+  #root .app-shell[class*="theme-"] .settings-modal .theme-chooser-card {
+    min-height: 132px;
+  }
+}
+
+/* Use the same full-bleed photographic cover treatment as the morning/evening adhkar cards. */
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) {
+  color: #fff !important;
+  background: transparent !important;
+  border-color: color-mix(in srgb, var(--theme-border) 55%, rgba(255,255,255,.32)) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.1) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) > .settings-card-cover,
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card > .settings-card-cover {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 100% !important;
+  border-radius: inherit !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+  filter: none !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro)::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+  background:
+    linear-gradient(180deg, rgba(8,14,17,.16) 0%, rgba(7,13,16,.48) 45%, rgba(6,11,14,.83) 100%),
+    linear-gradient(135deg, color-mix(in srgb, var(--theme-accent) 24%, transparent), transparent 65%) !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro)::after {
+  display: none !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) > :not(.settings-card-cover):not(.settings-card-art) {
+  position: relative !important;
+  z-index: 2 !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) > .settings-card-art,
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card > .settings-card-art {
+  display: none !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row, .background-coming-soon, .background-toggle-row, .theme-settings-intro) :is(strong, small, .prayer-setting-control > span),
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card.settings-visual-video-modal :is(strong, small),
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card.settings-visual-sound-modal :is(strong, small) {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.66) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting) .settings-row-icon {
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.35) !important;
+  background: rgba(6,12,15,.32) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.2), 0 6px 15px rgba(0,0,0,.22) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .settings-prayer-list .prayer-setting-row .prayer-setting-control input {
+  color: var(--theme-text) !important;
+  background: var(--theme-surface-strong) !important;
+  border-color: var(--theme-border) !important;
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card:is(.settings-visual-video-modal, .settings-visual-sound-modal) {
+  position: relative !important;
+  background: transparent !important;
+  border-color: color-mix(in srgb, var(--theme-border) 55%, rgba(255,255,255,.32)) !important;
+  box-shadow: 0 25px 70px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.12) !important;
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card:is(.settings-visual-video-modal, .settings-visual-sound-modal)::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(180deg, rgba(7,12,15,.28), rgba(6,11,14,.86)) !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card:is(.settings-visual-video-modal, .settings-visual-sound-modal) > :not(.settings-card-cover):not(.settings-card-art) {
+  position: relative !important;
+  z-index: 2 !important;
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card:is(.settings-visual-video-modal, .settings-visual-sound-modal) .settings-card-art {
+  display: none !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .settings-theme-category-pending {
+  opacity: .76 !important;
+  filter: saturate(.72) !important;
+}
+@media (max-width: 700px) {
+  #root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting, .prayer-setting-row) > .settings-card-cover {
+    background-position: center !important;
+  }
+}
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card.settings-visual-video-modal .sound-modal-header :is(h3, p),
+#root .app-shell[class*="theme-"] .sound-modal .sound-modal-card.settings-visual-sound-modal .sound-modal-header :is(h3, p) {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.7) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal .background-coming-soon > svg {
+  position: relative !important;
+  z-index: 2 !important;
+  color: #fff !important;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,.7));
+}
+
+/* Hide only the tiny forward chevrons at the foot of setting cards; keep explicit back/navigation controls. */
+#root .app-shell[class*="theme-"] .settings-modal :is(.settings-row, .settings-subrow, .sound-setting) > svg:last-child {
+  display: none !important;
+  visibility: hidden !important;
+}
+#root .app-shell[class*="theme-"] :is(.feature-tile, .adhkar-card, .nested-card-item) > .feature-arrow {
+  display: none !important;
+  visibility: hidden !important;
+}
+#root .app-shell[class*="theme-"] :is(.adhkar-card, .nested-card-item) > svg:last-child {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Prayer alert weekdays: theme-aware trigger and compact day chooser for iqama, advance alerts, and time corrections. */
+#root .app-shell[class*="theme-"] .settings-prayer-list .prayer-setting-row {
+  position: relative !important;
+}
+#root .app-shell[class*="theme-"] .prayer-weekday-trigger {
+  position: absolute !important;
+  z-index: 5 !important;
+  top: 12px !important;
+  left: 13px !important;
+  width: 29px !important;
+  height: 29px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  color: var(--theme-accent-strong, #668b78) !important;
+  border: 1px solid var(--theme-border, rgba(90,110,95,.3)) !important;
+  border-radius: 50% !important;
+  background: color-mix(in srgb, var(--theme-surface-strong, #fff) 88%, transparent) !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.14) !important;
+  cursor: pointer;
+}
+#root .app-shell[class*="theme-"] .prayer-weekday-trigger:hover {
+  transform: scale(1.08);
+  filter: brightness(1.08);
+}
+.prayer-weekday-overlay {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(9,14,16,.48);
+  backdrop-filter: blur(5px);
+  animation: fade-in .16s ease both;
+}
+#root .app-shell[class*="theme-"] .prayer-weekday-panel {
+  width: min(100%, 390px);
+  position: relative;
+  padding: 24px;
+  color: var(--theme-text, #263a36);
+  border: 1px solid var(--theme-border, rgba(90,110,95,.28));
+  border-radius: 22px;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #fffdf8), var(--theme-surface, #f4f1e8));
+  box-shadow: 0 24px 70px rgba(0,0,0,.28);
+  direction: rtl;
+}
+#root .app-shell[class*="theme-"] .prayer-weekday-close {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: var(--theme-muted, #7b857d);
+  border: 1px solid var(--theme-border, rgba(90,110,95,.28));
+  border-radius: 10px;
+  background: var(--theme-surface, #f4f1e8);
+  cursor: pointer;
+}
+.prayer-weekday-heading { display: flex; align-items: center; gap: 12px; margin: 0 34px 20px 0; }
+.prayer-weekday-heading > span { width: 40px; height: 40px; flex: 0 0 auto; display: grid; place-items: center; color: var(--theme-accent-strong, #668b78); border: 1px solid var(--theme-border, rgba(90,110,95,.28)); border-radius: 13px; background: color-mix(in srgb, var(--theme-accent, #718b78) 14%, var(--theme-surface, #fff)); }
+.prayer-weekday-heading h3 { margin: 0; color: var(--theme-text, #263a36); font: 800 16px/1.5 "Cairo", sans-serif; }
+.prayer-weekday-heading p { margin: 3px 0 0; color: var(--theme-muted, #7b857d); font-size: 11px; line-height: 1.7; }
+.prayer-weekday-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+#root .app-shell[class*="theme-"] .prayer-weekday-option {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 7px 5px;
+  color: var(--theme-text, #263a36);
+  border: 1px solid var(--theme-border, rgba(90,110,95,.26));
+  border-radius: 12px;
+  background: var(--theme-surface, #f4f1e8);
+  font: 700 11px/1.4 "Cairo", sans-serif;
+  cursor: pointer;
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+#root .app-shell[class*="theme-"] .prayer-weekday-option:hover { transform: translateY(-1px); }
+#root .app-shell[class*="theme-"] .prayer-weekday-option.is-selected {
+  color: var(--theme-accent-strong, #456c58);
+  border-color: var(--theme-accent, #718b78);
+  background: color-mix(in srgb, var(--theme-accent, #718b78) 18%, var(--theme-surface, #fff));
+}
+#root .app-shell[class*="theme-"] .settings-modal .settings-prayer-list .prayer-setting-row > .prayer-weekday-trigger {
+  position: absolute !important;
+  z-index: 5 !important;
+  top: 12px !important;
+  left: 13px !important;
+}
+
+
+/* Photo-backed adhkar settings and nawafil controls. */
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-adhkar {
+  --settings-motif-color: var(--theme-accent-strong);
+}
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-adhkar-nawafil { --settings-motif-color: var(--theme-accent); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-adhkar-friday { --settings-motif-color: var(--theme-accent-strong); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-adhkar-fasting { --settings-motif-color: var(--theme-accent); }
+#root .app-shell[class*="theme-"] .settings-modal .settings-visual-adhkar-daily { --settings-motif-color: var(--theme-accent-strong); }
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-row {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  color: #fff !important;
+  border-color: color-mix(in srgb, var(--theme-border) 55%, rgba(255,255,255,.32)) !important;
+  background: transparent !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.1) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-row > .settings-card-cover {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 100% !important;
+  border-radius: inherit !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-row::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(180deg, rgba(8,14,17,.24), rgba(6,11,14,.82)), linear-gradient(135deg, color-mix(in srgb, var(--theme-accent) 20%, transparent), transparent 70%) !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-row > :not(.settings-card-cover) {
+  position: relative !important;
+  z-index: 2 !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-row :is(strong, small, span) {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.66) !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-master > .settings-card-cover,
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-duha > .settings-card-cover { background-position: center 58% !important; }
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-qiyam > .settings-card-cover { background-position: center 48% !important; }
+
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-row .adhkar-time-result {
+  color: #fff !important;
+  background: rgba(5,12,15,.34) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  border-radius: 10px !important;
+  padding: 7px 10px !important;
+}
+#root .app-shell[class*="theme-"] .settings-modal :is(.adhkar-nawafil-list, .adhkar-friday-list, .adhkar-fasting-list, .adhkar-daily-list) .adhkar-photo-row .adhkar-time-result b {
+  color: #fff !important;
+}
+
+/* Friday salawat reminder times: the alert trigger opens editable times 1–24. */
+#root .app-shell[class*="theme-"] .adhkar-dhikr-time-trigger {
+  top: 9px !important;
+  left: 9px !important;
+  width: 23px !important;
+  height: 23px !important;
+  border-radius: 7px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.16) !important;
+}
+#root .app-shell[class*="theme-"] .adhkar-dhikr-time-trigger svg {
+  width: 13px !important;
+  height: 13px !important;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-times-panel {
+  width: min(100%, 460px);
+  max-height: min(82vh, 720px);
+  overflow: auto;
+  color: var(--theme-text, #263a36) !important;
+  border: 1px solid var(--theme-border, rgba(90,110,95,.28)) !important;
+  border-radius: 24px !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong, #fffdf8), var(--theme-surface, #f4f1e8)) !important;
+  opacity: 1 !important;
+  box-shadow: 0 28px 85px rgba(0,0,0,.34), 0 0 24px var(--theme-glow, rgba(90,110,95,.12)) !important;
+  animation: settings-sheet-rise .26s var(--ease-out) both;
+}
+.friday-dhikr-times-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  max-height: 48vh;
+  overflow: auto;
+  padding: 2px 1px 4px;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-time-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 7px 11px;
+  color: var(--theme-text, #263a36);
+  border: 1px solid var(--theme-border, rgba(90,110,95,.28));
+  border-radius: 12px;
+  background: var(--theme-surface, #fff);
+  font: 700 12px/1.4 "Cairo", sans-serif;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-time-row input {
+  width: 132px;
+  min-height: 34px;
+  padding: 4px 8px;
+  color: var(--theme-text, #263a36);
+  border: 1px solid var(--theme-border, rgba(90,110,95,.28));
+  border-radius: 9px;
+  background: var(--theme-surface-strong, #f4f1e8);
+  direction: ltr;
+  text-align: center;
+  font: 800 13px/1.2 "Cairo", sans-serif;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-time-row input:focus {
+  outline: 2px solid color-mix(in srgb, var(--theme-accent) 40%, transparent);
+  outline-offset: 1px;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-time-row span {
+  color: #425d55 !important;
+  font-weight: 800;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-times-done {
+  width: 100%;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 16px;
+  color: var(--theme-surface-strong, #fff);
+  border: 1px solid var(--theme-accent, #668b78);
+  border-radius: 11px;
+  background: var(--theme-accent, #668b78);
+  font: 800 12px/1.4 "Cairo", sans-serif;
+  cursor: pointer;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-times-done:hover { filter: brightness(1.08); }
+@media (max-width: 600px) {
+  #root .app-shell[class*="theme-"] .friday-dhikr-times-panel { width: min(100% - 24px, 460px); padding: 18px; }
+  #root .app-shell[class*="theme-"] .friday-dhikr-time-row input { width: 120px; }
+  .friday-dhikr-times-list { grid-template-columns: 1fr; }
+}
+
+/* Keep the Friday activation toggle beside the reminder count, not below it. */
+#root .app-shell[class*="theme-"] .friday-dhikr-count-control {
+  position: relative !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 9px !important;
+  min-width: 245px;
+  direction: rtl !important;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-count-control .adhkar-dhikr-time-trigger {
+  position: static !important;
+  width: 21px !important;
+  height: 21px !important;
+  margin: 0 !important;
+  border-radius: 6px !important;
+  order: 3;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-count-control .adhkar-dhikr-time-trigger svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-count-value {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  order: 2;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-enable-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 6px !important;
+  margin-top: 0 !important;
+  direction: rtl !important;
+  order: 1;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-enable-row > span {
+  color: #fff !important;
+  font: 800 9px/1.3 "Cairo", sans-serif !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.7) !important;
+  white-space: nowrap;
+}
+#root .app-shell[class*="theme-"] .friday-dhikr-times-panel,
+#root .app-shell[class*="theme-"] .friday-dhikr-times-panel::before {
+  background-color: var(--theme-surface-strong, #fffdf8) !important;
+  opacity: 1 !important;
+}
+
+/* Full-screen adhan experience: video is decorative, audio duration controls the session. */
+.adhan-fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #050709;
+  isolation: isolate;
+}
+.adhan-fullscreen-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #050709;
+}
+.adhan-fullscreen-close {
+  position: absolute;
+  z-index: 3;
+  top: max(18px, env(safe-area-inset-top));
+  left: max(18px, env(safe-area-inset-left));
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 50%;
+  background: rgba(0,0,0,.42);
+  box-shadow: 0 5px 18px rgba(0,0,0,.32);
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+.adhan-fullscreen-close:hover { transform: scale(1.06); background: rgba(0,0,0,.68); }
+.adhan-fullscreen-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+  padding: 17px 0 max(17px, env(safe-area-inset-bottom));
+  color: #fff;
+  background: rgba(0,0,0,.68);
+  direction: ltr;
+  white-space: nowrap;
+}
+.adhan-fullscreen-caption span {
+  display: inline-block;
+  min-width: 100%;
+  padding-inline: 100%;
+  direction: rtl;
+  text-align: center;
+  font: 800 clamp(16px, 2.5vw, 28px)/1.5 "Cairo", sans-serif;
+  text-shadow: 0 2px 8px rgba(0,0,0,.62);
+  animation: adhan-caption-marquee 14s linear infinite;
+}
+@keyframes adhan-caption-marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Audio player: Arabic controls and progress run from right to left. */
+.dhikr-player,
+.dhikr-player-top,
+.dhikr-player-track,
+.dhikr-player-controls {
+  direction: rtl !important;
+}
+.dhikr-player-track input[type="range"],
+.dhikr-player-track div {
+  direction: rtl !important;
+}
+.dhikr-player-controls {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.dhikr-player-controls > button:first-child,
+.dhikr-player-controls > button:nth-child(3) {
+  margin-inline: 0 !important;
+}
+.dhikr-speed {
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* Modern Minimal: make the play/pause control clear on the pale surface. */
+.app-shell.theme-modern-minimal .dhikr-player .dhikr-player-play {
+  color: #ffffff !important;
+  background: #0f766e !important;
+  border-color: #064e3b !important;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, .18), 0 5px 12px rgba(15, 118, 110, .28) !important;
+}
+.app-shell.theme-modern-minimal .dhikr-player .dhikr-player-play:hover {
+  background: #115e59 !important;
+  border-color: #064e3b !important;
+}
+
+/* The timeline itself starts at 00:00 on the left and ends on the right. */
+.dhikr-player-track,
+.dhikr-player-track input[type="range"],
+.dhikr-player-track div {
+  direction: ltr !important;
+}
+
+/* Curved navigation arrows visibly point toward the side they move to. */
+.dhikr-side-arrow svg {
+  stroke-width: 2.35;
+}
+.dhikr-side-arrow-right svg {
+  transform: scaleX(1.08);
+}
+.dhikr-side-arrow-left svg {
+  transform: scaleX(1.08);
+}
+
+/* Modern responsive audio player inspired by contemporary compact/full players. */
+.app-shell[class*="theme-"] .dhikr-player {
+  position: relative;
+  isolation: isolate;
+  width: min(560px, calc(100% - 12px));
+  margin: -82px auto 0;
+  padding: 12px 14px 11px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--theme-accent-strong) 34%, transparent) !important;
+  border-radius: 24px !important;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--theme-surface-strong) 92%, var(--theme-accent) 8%),
+    color-mix(in srgb, var(--theme-surface) 86%, var(--theme-accent) 14%)) !important;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .18) !important;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.app-shell[class*="theme-"] .dhikr-player:hover {
+  border-color: var(--theme-accent-strong) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .22),
+    0 0 0 3px color-mix(in srgb, var(--theme-accent) 16%, transparent) !important;
+}
+.app-shell[class*="theme-"] .dhikr-player::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -46px;
+  right: -34px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--theme-accent) 22%, transparent);
+  filter: blur(2px);
+  opacity: .7;
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .dhikr-player-top {
+  min-height: 30px;
+  gap: 8px;
+}
+.app-shell[class*="theme-"] .dhikr-player-top .voice-player-label {
+  color: var(--theme-muted) !important;
+  font-size: 9px;
+  letter-spacing: .02em;
+}
+.app-shell[class*="theme-"] .dhikr-player-top > button,
+.app-shell[class*="theme-"] .dhikr-player .voice-chooser-button {
+  width: 32px;
+  min-height: 32px;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 12px;
+  color: var(--theme-accent-strong) !important;
+  background: color-mix(in srgb, var(--theme-surface) 72%, var(--theme-accent) 28%) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.app-shell[class*="theme-"] .dhikr-player-top > button:hover,
+.app-shell[class*="theme-"] .dhikr-player .voice-chooser-button:hover {
+  transform: translateY(-1px);
+  background: var(--theme-glow) !important;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, .16);
+}
+.app-shell[class*="theme-"] .dhikr-player-summary {
+  margin: 2px 0 1px;
+  opacity: .9;
+}
+.app-shell[class*="theme-"] .dhikr-player-summary .counter-badges span {
+  min-height: 22px;
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 28%, transparent) !important;
+  border-radius: 999px;
+  color: var(--theme-text) !important;
+  background: color-mix(in srgb, var(--theme-surface) 68%, var(--theme-accent) 32%) !important;
+}
+.app-shell[class*="theme-"] .dhikr-player-track {
+  margin-top: 7px;
+}
+.app-shell[class*="theme-"] .dhikr-player-track input[type="range"] {
+  height: 6px;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 999px;
+  outline: none;
+  background: color-mix(in srgb, var(--theme-accent) 20%, var(--theme-surface-strong)) !important;
+  accent-color: var(--theme-accent-strong) !important;
+  cursor: pointer;
+}
+.app-shell[class*="theme-"] .dhikr-player-track input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-accent) 25%, var(--theme-surface-strong));
+}
+.app-shell[class*="theme-"] .dhikr-player-track input[type="range"]::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  margin-top: -4.5px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 3px solid var(--theme-surface-strong);
+  border-radius: 50%;
+  background: var(--theme-accent-strong);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .28);
+}
+.app-shell[class*="theme-"] .dhikr-player-track input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-accent) 25%, var(--theme-surface-strong));
+}
+.app-shell[class*="theme-"] .dhikr-player-track input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: 3px solid var(--theme-surface-strong);
+  border-radius: 50%;
+  background: var(--theme-accent-strong);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .28);
+}
+.app-shell[class*="theme-"] .dhikr-player-track div {
+  margin-top: 3px;
+  color: var(--theme-muted) !important;
+  font-size: 8px;
+}
+.app-shell[class*="theme-"] .dhikr-player-controls {
+  min-height: 40px;
+  margin-top: 5px;
+  gap: 9px !important;
+}
+.app-shell[class*="theme-"] .dhikr-player-controls > button {
+  width: 31px;
+  height: 31px;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 12px;
+  color: var(--theme-accent-strong) !important;
+  background: color-mix(in srgb, var(--theme-surface-strong) 90%, var(--theme-accent) 10%) !important;
+  box-shadow: 0 4px 9px rgba(0, 0, 0, .12);
+  transition: transform .18s ease, background .18s ease;
+}
+.app-shell[class*="theme-"] .dhikr-player-controls > button:hover {
+  transform: translateY(-2px);
+  background: var(--theme-glow) !important;
+}
+.app-shell[class*="theme-"] .dhikr-player-controls > button:first-child svg,
+.app-shell[class*="theme-"] .dhikr-player-controls > button:nth-child(3) svg {
+  stroke-width: 2.35;
+}
+.app-shell[class*="theme-"] .dhikr-player-controls .dhikr-player-play {
+  width: 44px;
+  height: 44px;
+  border: 3px solid color-mix(in srgb, var(--theme-surface-strong) 72%, transparent) !important;
+  border-radius: 50%;
+  color: var(--theme-bg) !important;
+  background: var(--theme-accent-strong) !important;
+  box-shadow: 0 7px 16px color-mix(in srgb, var(--theme-accent-strong) 35%, transparent),
+    0 0 0 4px color-mix(in srgb, var(--theme-accent) 12%, transparent) !important;
+  transform: none;
+}
+.app-shell[class*="theme-"] .dhikr-player-controls .dhikr-player-play:hover {
+  transform: scale(1.06);
+  background: var(--theme-accent) !important;
+}
+.app-shell[class*="theme-"] .dhikr-speed {
+  color: var(--theme-muted) !important;
+}
+.app-shell[class*="theme-"] .dhikr-speed select {
+  min-height: 25px;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 9px;
+  color: var(--theme-text) !important;
+  background: var(--theme-surface-strong) !important;
+}
+
+/* Small screens use a flatter inline card while keeping the same visual language. */
+@media (max-width: 600px) {
+  .app-shell[class*="theme-"] .dhikr-player {
+    width: calc(100% - 8px);
+    margin-top: -76px;
+    padding: 10px 11px 9px;
+    border-radius: 20px !important;
+  }
+  .app-shell[class*="theme-"] .dhikr-player-controls .dhikr-player-play {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* A centered top notch lets the counter sit inside the player on every theme. */
+.app-shell[class*="theme-"] .dhikr-player {
+  overflow: visible !important;
+  -webkit-mask-image: radial-gradient(
+    ellipse 78px 43px at 50% 0,
+    transparent 0 67px,
+    #000 71px
+  ) !important;
+  mask-image: radial-gradient(
+    ellipse 78px 43px at 50% 0,
+    transparent 0 67px,
+    #000 71px
+  ) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+  mask-size: 100% 100% !important;
+}
+.app-shell[class*="theme-"] .dhikr-player::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: -1px;
+  left: 50%;
+  width: 154px;
+  height: 43px;
+  transform: translateX(-50%);
+  border: 1px solid color-mix(in srgb, var(--theme-accent-strong) 42%, transparent);
+  border-bottom: 0;
+  border-radius: 80px 80px 0 0;
+  background: transparent;
+  box-shadow: 0 -3px 10px color-mix(in srgb, var(--theme-accent) 15%, transparent);
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .dhikr-player::after {
+  z-index: 0;
+  pointer-events: none;
+}
+.app-shell[class*="theme-"] .mechanical-counter,
+.app-shell[class*="theme-"] .mechanical-counter-button {
+  z-index: 40 !important;
+}
+.app-shell[class*="theme-"] .dhikr-player-top,
+.app-shell[class*="theme-"] .dhikr-player-track,
+.app-shell[class*="theme-"] .dhikr-player-controls,
+.app-shell[class*="theme-"] .dhikr-player-summary {
+  position: relative;
+  z-index: 4;
+}
+@media (max-width: 600px) {
+  .app-shell[class*="theme-"] .dhikr-player {
+    -webkit-mask-image: radial-gradient(
+      ellipse 66px 37px at 50% 0,
+      transparent 0 56px,
+      #000 60px
+    ) !important;
+    mask-image: radial-gradient(
+      ellipse 66px 37px at 50% 0,
+      transparent 0 56px,
+      #000 60px
+    ) !important;
+  }
+  .app-shell[class*="theme-"] .dhikr-player::before {
+    width: 130px;
+    height: 37px;
+    border-radius: 68px 68px 0 0;
+  }
+}
+
+/* Counter progress: the outermost circle fills according to completed repetitions. */
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-ring {
+  position: absolute;
+  z-index: 8;
+  inset: 2.5%;
+  display: block;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(
+      from -90deg,
+      color-mix(in srgb, var(--theme-surface-strong) 92%, var(--theme-accent-strong) 8%) 0 1.5deg,
+      transparent 1.5deg calc(360deg / var(--counter-target, 1))
+    ),
+    conic-gradient(
+      from -90deg,
+      var(--theme-accent-strong) 0 var(--counter-progress, 0%),
+      color-mix(in srgb, var(--theme-border) 72%, transparent) 0
+    );
+  -webkit-mask-image: radial-gradient(circle, transparent 0 76%, #000 78% 100%);
+  mask-image: radial-gradient(circle, transparent 0 76%, #000 78% 100%);
+  pointer-events: none;
+  transition: background .25s ease, filter .25s ease;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--theme-accent) 42%, transparent));
+}
+.app-shell[class*="theme-"] .mechanical-counter-button:hover .counter-progress-ring {
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--theme-accent-strong) 58%, transparent));
+}
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-core,
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-number {
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-ring {
+    transition: none;
+  }
+}
+
+/* Reliable SVG progress ring: visible in the outer counter circle in every browser. */
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-ring {
+  position: absolute;
+  z-index: 9;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 50%;
+  background: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  pointer-events: none;
+  transform: rotate(-90deg);
+}
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-track,
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-value {
+  fill: none;
+  stroke-width: 5;
+}
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-track {
+  stroke: color-mix(in srgb, var(--theme-border) 72%, transparent);
+  opacity: .65;
+}
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-value {
+  stroke: var(--theme-accent-strong);
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--theme-accent-strong) 50%, transparent));
+  transition: stroke-dashoffset .28s ease;
+}
+.app-shell[class*="theme-"] .mechanical-counter-button:hover .counter-progress-value {
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--theme-accent-strong) 70%, transparent));
+}
+
+/* Shape-aware ring: it follows the counter silhouette and sits between its circles. */
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-ring {
+  position: absolute;
+  z-index: 8;
+  inset: 8%;
+  display: block;
+  border-radius: inherit;
+  background: conic-gradient(
+    from -90deg,
+    var(--theme-accent-strong) 0 var(--counter-progress, 0%),
+    color-mix(in srgb, var(--theme-border) 70%, transparent) 0 100%
+  ) !important;
+  padding: 5px;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  pointer-events: none;
+  transform: none;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--theme-accent-strong) 45%, transparent));
+  transition: background .28s ease, filter .28s ease;
+}
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-ring::after {
+  content: none;
+}
+.app-shell[class*="theme-"] .mechanical-counter-button:hover .counter-progress-ring {
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--theme-accent-strong) 65%, transparent));
+}
+
+/* Exact counter gap: between the outer frame (8%) and the middle ring (14%). */
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-progress-ring {
+  inset: 8% !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 7% !important;
+  border-radius: inherit !important;
+}
+
+/* Angular themes use a matching rectangular notch instead of the circular arch. */
+.app-shell.theme-technological-neon .dhikr-player,
+.app-shell.theme-amoled-cyber .dhikr-player,
+.app-shell.theme-dashboard-grid .dhikr-player {
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0) !important;
+  mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0) !important;
+  -webkit-mask-size: 100% 100%, 42% 72px !important;
+  mask-size: 100% 100%, 42% 72px !important;
+  -webkit-mask-position: 0 0, 50% 0 !important;
+  mask-position: 0 0, 50% 0 !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+}
+.app-shell.theme-technological-neon .dhikr-player::before,
+.app-shell.theme-amoled-cyber .dhikr-player::before,
+.app-shell.theme-dashboard-grid .dhikr-player::before {
+  width: 42% !important;
+  height: 72px !important;
+  top: -1px !important;
+  border-radius: 12px 12px 0 0 !important;
+  border: 1px solid var(--theme-border) !important;
+  border-bottom: 0 !important;
+  background: var(--theme-surface) !important;
+}
+
+/* Fortress only: keep the counter button hidden, show count information, and use a complete player bar. */
+.app-shell .dhikr-modal-fortress .mechanical-counter-button {
+  display: none !important;
+}
+.app-shell .dhikr-modal-fortress-opening .mechanical-counter-button {
+  display: none !important;
+}
+.app-shell .dhikr-modal-fortress .counter-badges {
+  display: none !important;
+}
+.app-shell .dhikr-modal-fortress .dhikr-player {
+  /* Keep a small visual gap between the music bar and parchment in Fortress only. */
+  margin-top: clamp(-118px, -14vw, -68px) !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  border-radius: 24px !important;
+}
+.app-shell .dhikr-modal-fortress .dhikr-player::before,
+.app-shell .dhikr-modal-fortress .dhikr-player::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Home feature tiles: semantic surfaces with a clean glyph, not a generic photo inside a small circle. */
+.app-shell[class*="theme-"] .radial-utility-node > img.utility-card-photo,
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > img.utility-art-photo {
+  display: none !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node {
+  background: linear-gradient(145deg, var(--theme-surface-strong), var(--theme-surface)) !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art {
+  width: 40px !important;
+  height: 40px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > svg {
+  width: 24px !important;
+  height: 24px !important;
+  color: var(--theme-accent-strong) !important;
+  filter: none !important;
+  stroke-width: 1.65;
+}
+.app-shell[class*="theme-"] .radial-utility-node.theme-tool-mint {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--theme-surface) 72%, #d8c18a 28%), var(--theme-surface-strong)) !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node.theme-tool-mint > .utility-art > svg {
+  color: color-mix(in srgb, var(--theme-accent-strong) 70%, #8b6a32) !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node.theme-tool-rose,
+.app-shell[class*="theme-"] .radial-utility-node.theme-tool-teal {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--theme-surface) 76%, var(--theme-accent) 24%), var(--theme-surface-strong)) !important;
+}
+
+/* Feature circles use the image as a complete background; no overlaid glyphs. */
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art {
+  width: 44px !important;
+  height: 44px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 50% !important;
+  background: var(--theme-surface-strong) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .22) !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > img.utility-art-photo {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art > svg {
+  display: none !important;
+}
+
+/* The feature card itself is the image circle; remove the extra inner circle entirely. */
+.app-shell[class*="theme-"] .radial-utility-node > .utility-art {
+  display: none !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node > img.utility-card-photo {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  border-radius: inherit !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  opacity: 1 !important;
+}
+.app-shell[class*="theme-"] .radial-utility-node {
+  border-radius: 50% !important;
+}
