@@ -1,0 +1,96 @@
+{
+  "name": "Al-Mosaly optional themes",
+  "version": 1,
+  "themes": [
+    {
+      "id": "technological-neon",
+      "name": "التكنولوجي Neon",
+      "englishName": "Technological Neon",
+      "description": "ساعة مركزية، توهج نيون وواجهة مستقبلية",
+      "palette": "#07151e · #49e3dc · #b8f7f1",
+      "preview": "/Themes/technological-neon/assets/preview.png",
+      "style": "/Themes/technological-neon/theme.css",
+      "heroImage": "/Themes/technological-neon/assets/images/hero.jpg"
+    },
+    {
+      "id": "modern-minimal",
+      "name": "العصري Minimal",
+      "englishName": "Modern Minimal",
+      "description": "ألوان عاجية وأخضر هادئ ونصوص واضحة بلا وهج",
+      "palette": "#f2f0e8 · #386e63 · #9a7048",
+      "preview": "/Themes/modern-minimal/assets/preview.png",
+      "style": "/Themes/modern-minimal/theme.css",
+      "heroImage": "/Themes/modern-minimal/assets/images/hero.jpg"
+    },
+    {
+      "id": "windows11-fluent",
+      "name": "Windows 11 Fluent",
+      "englishName": "Windows 11 Fluent",
+      "description": "أسطح Mica شفافة وطبقات Acrylic ناعمة",
+      "palette": "#172338 · #8fc7ff · #d8eaff",
+      "preview": "/Themes/windows11-fluent/assets/preview.png",
+      "style": "/Themes/windows11-fluent/theme.css",
+      "heroImage": "/Themes/windows11-fluent/assets/images/hero.jpg"
+    },
+    {
+      "id": "andalusian",
+      "name": "الأندلسي",
+      "englishName": "Andalusian Heritage",
+      "description": "أخضر حدائقي عتيق وعاجي ونحاس ذهبي مطفأ",
+      "palette": "#202a22 · #d0b77d · #f1e7d2",
+      "preview": "/Themes/andalusian/assets/preview.png",
+      "style": "/Themes/andalusian/theme.css",
+      "heroImage": "/Themes/andalusian/assets/images/hero.jpg"
+    },
+    {
+      "id": "glassmorphism",
+      "name": "الزجاجي Glass",
+      "englishName": "Glassmorphism",
+      "description": "ألواح زجاجية مضيئة وتدرجات ليلية",
+      "palette": "#121832 · #67e5de · #c8a9ff",
+      "preview": "/Themes/glassmorphism/assets/preview.png",
+      "style": "/Themes/glassmorphism/theme.css",
+      "heroImage": "/Themes/glassmorphism/assets/images/hero.jpg"
+    },
+    {
+      "id": "amoled-cyber",
+      "name": "AMOLED Cyber",
+      "englishName": "AMOLED Cyber",
+      "description": "أسود عميق وألوان إلكترونية عالية التباين",
+      "palette": "#030405 · #cb6cff · #34eaff",
+      "preview": "/Themes/amoled-cyber/assets/preview.png",
+      "style": "/Themes/amoled-cyber/theme.css",
+      "heroImage": "/Themes/amoled-cyber/assets/images/hero.jpg"
+    },
+    {
+      "id": "material-depth",
+      "name": "Material Depth",
+      "englishName": "Material Depth",
+      "description": "طبقات ملموسة وظلال عميقة وألوان دافئة",
+      "palette": "#263b32 · #e1b477 · #f5e8d0",
+      "preview": "/Themes/material-depth/assets/preview.png",
+      "style": "/Themes/material-depth/theme.css",
+      "heroImage": "/Themes/material-depth/assets/images/hero.jpg"
+    },
+    {
+      "id": "nature-calm",
+      "name": "الطبيعي Calm",
+      "englishName": "Nature Calm",
+      "description": "عاجي وأخضر Sage ناعم لواجهة طبيعية مريحة",
+      "palette": "#edf1e8 · #5d806a · #a9764f",
+      "preview": "/Themes/nature-calm/assets/preview.png",
+      "style": "/Themes/nature-calm/theme.css",
+      "heroImage": "/Themes/nature-calm/assets/images/hero.jpg"
+    },
+    {
+      "id": "dashboard-grid",
+      "name": "لوحة التحكم Grid",
+      "englishName": "Dashboard Grid",
+      "description": "شبكة عملية ومعلومات واضحة في شاشة واحدة",
+      "palette": "#10242b · #c9a36a · #ecf3ee",
+      "preview": "/Themes/dashboard-grid/assets/preview.png",
+      "style": "/Themes/dashboard-grid/theme.css",
+      "heroImage": "/Themes/dashboard-grid/assets/images/hero.jpg"
+    }
+  ]
+}
