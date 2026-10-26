@@ -1,0 +1,300 @@
+/* Clean final override layer. Keep this file separate so the radial geometry remains easy to audit. */
+.app-shell.theme-luxury-editorial { --theme-bg:#0b0b0c; --theme-surface:#1d1c1b; --theme-surface-strong:#171617; --theme-text:#f2e4ca; --theme-muted:#bcae97; --theme-accent:#d8b477; --theme-accent-strong:#f0ce8c; --theme-border:rgba(216,180,119,.34); --theme-glow:rgba(216,180,119,.16); --theme-hero:linear-gradient(145deg,#171617,#080809); }
+.app-shell[class*="theme-"] { min-width:1180px !important; min-height:100vh; background:var(--theme-bg) !important; color:var(--theme-text) !important; }
+.app-shell[class*="theme-"] .hero-panel { position:relative; min-height:900px !important; max-width:none !important; overflow:hidden; background:var(--theme-hero) !important; border-radius:0 0 48px 48px !important; }
+.app-shell[class*="theme-"] .hero-content { position:absolute !important; left:50% !important; top:50% !important; width:360px !important; margin:0 !important; transform:translate(-50%,-50%) !important; animation:none !important; z-index:10; }
+.app-shell[class*="theme-"] .hero-content::before { content:""; position:absolute; left:50%; top:50%; width:374px; height:374px; transform:translate(-50%,-50%); border:2px solid var(--theme-accent); border-radius:50%; background:radial-gradient(circle,rgba(0,0,0,.25) 0 55%,var(--theme-glow) 56%,transparent 72%); box-shadow:0 0 0 9px rgba(255,255,255,.03),0 0 0 18px var(--theme-glow),0 0 65px var(--theme-glow); z-index:-1; }
+.app-shell[class*="theme-"] .hero-content::after { content:""; position:absolute; left:50%; top:50%; width:330px; height:330px; transform:translate(-50%,-50%); border:1px dashed var(--theme-border); border-radius:50%; z-index:-1; }
+.app-shell[class*="theme-"] .hero-countdown { color:var(--theme-accent-strong) !important; font-size:72px !important; text-shadow:0 0 26px var(--theme-glow); }
+.app-shell[class*="theme-"] .hero-countdown b, .app-shell[class*="theme-"] .hero-eyebrow, .app-shell[class*="theme-"] .location-label, .app-shell[class*="theme-"] .hero-bottom-note { color:var(--theme-muted) !important; }
+.app-shell[class*="theme-"] .next-prayer-pill { color:var(--theme-text) !important; background:rgba(0,0,0,.3) !important; border-color:var(--theme-border) !important; }
+.app-shell[class*="theme-"] .next-prayer-pill i, .app-shell[class*="theme-"] .next-prayer-icon { color:var(--theme-accent-strong) !important; }
+.radial-prayer-stage { position:absolute !important; left:50% !important; right:auto !important; top:132px !important; bottom:62px !important; width:min(1200px,100vw) !important; max-width:1200px !important; margin:0 !important; transform:translateX(-50%) !important; z-index:8; pointer-events:none; }
+.radial-orbit { position:absolute !important; left:50% !important; top:50% !important; transform:translate(-50%,-50%) !important; border:1px solid var(--theme-border) !important; border-radius:50% !important; pointer-events:none; }
+.radial-orbit-outer { width:700px !important; height:700px !important; box-shadow:0 0 38px var(--theme-glow),inset 0 0 30px rgba(255,255,255,.025); }
+.radial-orbit-inner { width:430px !important; height:430px !important; border-color:var(--theme-accent) !important; opacity:.5; }
+.radial-prayer-card { position:absolute !important; display:flex !important; width:124px !important; height:124px !important; min-height:124px !important; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:8px; border:2px solid var(--theme-accent) !important; border-radius:50% !important; color:var(--theme-text) !important; background:radial-gradient(circle at 35% 24%,var(--theme-glow),var(--theme-surface) 64%) !important; box-shadow:0 0 0 5px rgba(255,255,255,.03),0 0 22px var(--theme-glow),0 15px 30px rgba(0,0,0,.25); pointer-events:auto; }
+.radial-prayer-card::before { content:""; position:absolute; inset:7px; border:1px dotted var(--theme-border); border-radius:50%; }
+.radial-prayer-card-1 { top:4% !important; left:50% !important; transform:translateX(-50%) !important; }
+.radial-prayer-card-2 { top:23% !important; right:18% !important; }
+.radial-prayer-card-3 { bottom:18% !important; right:18% !important; }
+.radial-prayer-card-4 { bottom:3% !important; left:50% !important; transform:translateX(-50%) !important; }
+.radial-prayer-card-5 { bottom:18% !important; left:18% !important; }
+.radial-prayer-card-6 { top:23% !important; left:18% !important; }
+.radial-prayer-index { position:absolute !important; top:14px !important; left:50% !important; transform:translateX(-50%) !important; color:var(--theme-accent) !important; font:700 14px Cairo,sans-serif; }
+.radial-prayer-icon { width:42px !important; height:42px !important; display:grid !important; place-items:center; margin-top:6px; border:0 !important; border-radius:50% !important; color:var(--theme-accent-strong) !important; background:transparent !important; }
+.radial-prayer-card strong { color:var(--theme-text) !important; font:800 13px/1.2 Cairo,sans-serif; }
+.radial-prayer-card time { direction:ltr; color:var(--theme-accent-strong) !important; font:800 15px/1.2 Cairo,sans-serif; }
+.radial-prayer-card time small { color:var(--theme-muted) !important; font:700 9px Tajawal,sans-serif; }
+.radial-prayer-card .radial-prayer-status { position:absolute; right:50%; bottom:7px; transform:translateX(50%); color:var(--theme-accent) !important; background:transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; }
+.radial-utility-node { position:absolute !important; z-index:9; width:104px !important; height:104px !important; min-height:0 !important; display:flex !important; flex-direction:column; align-items:center; justify-content:center; gap:4px; padding:0; border:2px solid var(--theme-accent-strong) !important; border-radius:50% !important; color:var(--theme-text) !important; background:radial-gradient(circle,var(--theme-surface),rgba(0,0,0,.18)) !important; box-shadow:0 0 0 5px rgba(255,255,255,.02),0 0 22px var(--theme-glow); pointer-events:auto; }
+.radial-utility-node::before { content:""; position:absolute; inset:7px; border:1px dashed var(--theme-border); border-radius:50%; }
+.radial-utility-node span, .radial-utility-node strong { position:relative; z-index:1; }
+.radial-utility-node span { width:39px; height:39px; display:grid; place-items:center; color:var(--theme-accent-strong); }
+.radial-utility-node strong { color:var(--theme-text); font:800 12px Cairo,sans-serif; }
+.radial-utility-calendar { left:19% !important; top:-2% !important; }
+.radial-utility-qibla { right:19% !important; top:-2% !important; }
+.radial-utility-quran { right:1% !important; top:48% !important; }
+.radial-utility-adhkar { right:13% !important; bottom:0 !important; }
+.radial-utility-settings { left:13% !important; bottom:0 !important; }
+.radial-utility-mosques { left:1% !important; top:48% !important; }
+.app-shell[class*="theme-"] .prayer-heading, .app-shell[class*="theme-"] .prayer-scroller { margin-top:30px; }
+.app-shell[class*="theme-"] .prayer-card, .app-shell[class*="theme-"] .feature-tile, .app-shell[class*="theme-"] .night-stats { color:var(--theme-text) !important; background:var(--theme-surface) !important; border-color:var(--theme-border) !important; }
+.app-shell[class*="theme-"] .section-heading h2, .app-shell[class*="theme-"] .date-main, .app-shell[class*="theme-"] .date-hijri { color:var(--theme-text) !important; }
+.app-shell[class*="theme-"] .section-kicker, .app-shell[class*="theme-"] .text-link, .app-shell[class*="theme-"] .date-main b { color:var(--theme-accent) !important; }
+.app-shell[class*="theme-"] .feature-icon, .app-shell[class*="theme-"] .stat-icon { color:var(--theme-accent-strong) !important; background:var(--theme-glow) !important; }
+@media (max-width:1250px) { .radial-orbit-outer { width:640px !important; height:640px !important; } .radial-prayer-card-2, .radial-prayer-card-3 { right:14% !important; } .radial-prayer-card-5, .radial-prayer-card-6 { left:14% !important; } }
+/* New workspace: no legacy date/prayer/feature card grid remains below the hero. */
+.theme-workspace { position:relative; z-index:2; width:min(1220px,calc(100% - 72px)); margin:0 auto; padding:32px 0 72px; color:var(--theme-text); }
+.theme-workspace-bar { position:relative; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 22px; border:1px solid var(--theme-border); border-radius:24px; background:linear-gradient(135deg,var(--theme-surface),rgba(0,0,0,.12)); box-shadow:0 18px 44px rgba(0,0,0,.2); }
+.theme-date-block { display:flex; align-items:baseline; gap:12px; direction:rtl; }
+.theme-date-block span, .theme-date-block small { color:var(--theme-muted); font:600 12px Cairo,sans-serif; }
+.theme-date-block strong { color:var(--theme-text); font:800 20px Cairo,sans-serif; }
+.theme-workspace-actions { display:flex; gap:8px; direction:ltr; }
+.theme-workspace-actions .icon-button { color:var(--theme-accent-strong)!important; background:var(--theme-surface-strong)!important; border-color:var(--theme-border)!important; }
+.theme-quick-menu { position:absolute; top:72px; left:20px; z-index:30; display:grid; gap:4px; min-width:210px; padding:8px; border:1px solid var(--theme-border); border-radius:16px; background:var(--theme-surface-strong); box-shadow:0 20px 48px rgba(0,0,0,.36); }
+.theme-quick-menu button { display:flex; align-items:center; gap:8px; padding:10px; color:var(--theme-text); background:transparent; border:0; border-radius:10px; text-align:right; }
+.theme-quick-menu button:hover { background:var(--theme-glow); }
+.theme-status-row { display:grid; grid-template-columns:180px 180px 1fr; align-items:center; gap:16px; margin:20px 0; padding:15px 20px; border:1px solid var(--theme-border); border-radius:20px; background:rgba(255,255,255,.035); }
+.theme-status-row > div { display:grid; grid-template-columns:36px 1fr; grid-template-rows:auto auto; column-gap:10px; align-items:center; }
+.theme-status-icon { grid-row:span 2; display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--theme-border); border-radius:50%; color:var(--theme-accent-strong); background:var(--theme-glow); }
+.theme-status-row small { color:var(--theme-muted); font:600 10px Cairo,sans-serif; }
+.theme-status-row strong { color:var(--theme-text); font:800 17px Cairo,sans-serif; direction:ltr; }
+.theme-status-row em { color:var(--theme-muted); font:700 9px Tajawal,sans-serif; }
+.theme-status-row p { display:flex; align-items:center; justify-content:flex-end; gap:8px; margin:0; color:var(--theme-muted); font:600 11px Cairo,sans-serif; }
+.theme-status-row p svg { color:var(--theme-accent); }
+.theme-tools-panel { padding:26px; border:1px solid var(--theme-border); border-radius:28px; background:linear-gradient(145deg,var(--theme-surface),rgba(0,0,0,.1)); box-shadow:0 20px 60px rgba(0,0,0,.2); }
+.theme-tools-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; }
+.theme-tools-heading span { color:var(--theme-accent); font:700 11px Cairo,sans-serif; }
+.theme-tools-heading h2 { margin:5px 0 0; color:var(--theme-text); font:800 24px Cairo,sans-serif; }
+.theme-tools-heading button { display:grid; place-items:center; width:40px; height:40px; border:1px solid var(--theme-border); border-radius:50%; color:var(--theme-accent-strong); background:var(--theme-glow); }
+.theme-tools-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.theme-tool-card { position:relative; display:flex; align-items:center; gap:13px; min-height:106px; padding:17px; border:1px solid var(--theme-border); border-radius:20px; color:var(--theme-text); background:rgba(255,255,255,.035); text-align:right; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
+.theme-tool-card:hover { transform:translateY(-4px); border-color:var(--theme-accent); background:var(--theme-glow); }
+.theme-tool-icon { display:grid; place-items:center; flex:0 0 52px; width:52px; height:52px; border:1px solid var(--theme-border); border-radius:16px; color:var(--theme-accent-strong); background:var(--theme-glow); }
+.theme-tool-copy { display:grid; gap:4px; }
+.theme-tool-copy strong { color:var(--theme-text); font:800 14px Cairo,sans-serif; }
+.theme-tool-copy small { color:var(--theme-muted); font:600 10px Tajawal,sans-serif; }
+.theme-tool-arrow { margin-right:auto; color:var(--theme-muted); }
+.theme-tool-saffron .theme-tool-icon{color:#f1c77f}
+.theme-tool-sea .theme-tool-icon{color:#67e5de}
+.theme-tool-plum .theme-tool-icon{color:#c8a9ff}
+.theme-tool-slate .theme-tool-icon{color:#b8cbe0}
+.theme-tool-rose .theme-tool-icon{color:#ff9bb5}
+.theme-tool-mint .theme-tool-icon{color:#9ee6cd}
+.theme-tool-sky .theme-tool-icon{color:#8fc7ff}
+.theme-tool-rust .theme-tool-icon{color:#e9a87d}
+@media (max-width:1050px) { .theme-tools-grid{grid-template-columns:repeat(2,1fr)} .theme-workspace{width:calc(100% - 44px)} }
+/* Two logical layers: each utility sits behind the matching prayer on the same axis. */
+.radial-utility-node { z-index:4 !important; width:86px !important; height:86px !important; opacity:.92; border-width:1px !important; box-shadow:0 0 0 4px rgba(255,255,255,.018),0 0 20px var(--theme-glow); }
+.radial-utility-node span { width:32px; height:32px; }
+.radial-utility-node strong { font-size:10px; }
+.radial-prayer-card { z-index:10 !important; }
+.radial-utility-calendar { left:50% !important; top:-7% !important; right:auto !important; transform:translateX(-50%) !important; }
+.radial-utility-qibla { right:6% !important; top:16% !important; left:auto !important; }
+.radial-utility-quran { right:6% !important; top:auto !important; bottom:16% !important; left:auto !important; }
+.radial-utility-adhkar { left:50% !important; bottom:-7% !important; right:auto !important; transform:translateX(-50%) !important; }
+.radial-utility-settings { left:6% !important; bottom:16% !important; right:auto !important; }
+.radial-utility-mosques { left:6% !important; top:16% !important; right:auto !important; }
+/* Complete tool ring: every original tool gets one stable angular slot. */
+.radial-utility-all { left:50% !important; top:50% !important; right:auto !important; bottom:auto !important; margin:-43px 0 0 -43px !important; transform:rotate(var(--tool-angle)) translateY(-360px) rotate(calc(-1 * var(--tool-angle))) !important; }
+.radial-utility-all:hover { transform:rotate(var(--tool-angle)) translateY(-360px) rotate(calc(-1 * var(--tool-angle))) scale(1.08) !important; }
+.radial-utility-all:nth-of-type(3n) { border-color:var(--theme-accent-strong) !important; }
+@media (max-width:1250px) { .radial-utility-all { transform:rotate(var(--tool-angle)) translateY(-326px) rotate(calc(-1 * var(--tool-angle))) !important; } .radial-utility-all:hover { transform:rotate(var(--tool-angle)) translateY(-326px) rotate(calc(-1 * var(--tool-angle))) scale(1.08) !important; } }
+/* Geometry correction: centered clock, six prayers on one circumference, all tools on a larger outer circumference. */
+.radial-orbit-outer { width:840px !important; height:840px !important; }
+.radial-orbit-inner { width:600px !important; height:600px !important; }
+.radial-prayer-card { top:50% !important; left:50% !important; right:auto !important; bottom:auto !important; margin:-62px 0 0 -62px !important; }
+.radial-prayer-card-1 { --prayer-angle:-90deg; transform:rotate(var(--prayer-angle)) translateY(-300px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+.radial-prayer-card-2 { --prayer-angle:-30deg; transform:rotate(var(--prayer-angle)) translateY(-300px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+.radial-prayer-card-3 { --prayer-angle:30deg; transform:rotate(var(--prayer-angle)) translateY(-300px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+.radial-prayer-card-4 { --prayer-angle:90deg; transform:rotate(var(--prayer-angle)) translateY(-300px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+.radial-prayer-card-5 { --prayer-angle:150deg; transform:rotate(var(--prayer-angle)) translateY(-300px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+.radial-prayer-card-6 { --prayer-angle:210deg; transform:rotate(var(--prayer-angle)) translateY(-300px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+.radial-prayer-card:hover, .radial-prayer-card.is-active { transform:rotate(var(--prayer-angle)) translateY(-300px) rotate(calc(-1 * var(--prayer-angle))) scale(1.08) !important; }
+.radial-utility-all { width:78px !important; height:78px !important; margin:-39px 0 0 -39px !important; transform:rotate(var(--tool-angle)) translateY(-420px) rotate(calc(-1 * var(--tool-angle))) !important; }
+.radial-utility-all:hover { transform:rotate(var(--tool-angle)) translateY(-420px) rotate(calc(-1 * var(--tool-angle))) scale(1.08) !important; }
+@media (max-width:1250px) {
+  .radial-orbit-outer { width:760px !important; height:760px !important; }
+  .radial-orbit-inner { width:540px !important; height:540px !important; }
+  .radial-prayer-card-1, .radial-prayer-card-2, .radial-prayer-card-3, .radial-prayer-card-4, .radial-prayer-card-5, .radial-prayer-card-6 { transform:rotate(var(--prayer-angle)) translateY(-270px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+  .radial-prayer-card:hover, .radial-prayer-card.is-active { transform:rotate(var(--prayer-angle)) translateY(-270px) rotate(calc(-1 * var(--prayer-angle))) scale(1.08) !important; }
+  .radial-utility-all { transform:rotate(var(--tool-angle)) translateY(-380px) rotate(calc(-1 * var(--tool-angle))) !important; }
+  .radial-utility-all:hover { transform:rotate(var(--tool-angle)) translateY(-380px) rotate(calc(-1 * var(--tool-angle))) scale(1.08) !important; }
+}
+/* Give the complete outer ring enough vertical space on desktop. */
+.app-shell[class*="theme-"] .hero-panel { min-height:1040px !important; }
+.radial-prayer-stage { top:100px !important; bottom:60px !important; }
+/* Prayer order around the clock: Fajr top, then Shurooq, Dhuhr, Asr, Maghrib, Isha clockwise. */
+.radial-prayer-card-1 { --prayer-angle:0deg !important; }
+.radial-prayer-card-2 { --prayer-angle:60deg !important; }
+.radial-prayer-card-3 { --prayer-angle:120deg !important; }
+.radial-prayer-card-4 { --prayer-angle:180deg !important; }
+.radial-prayer-card-5 { --prayer-angle:240deg !important; }
+.radial-prayer-card-6 { --prayer-angle:300deg !important; }
+/* Larger balanced composition: the clock stays centered inside the expanded rings. */
+.app-shell[class*="theme-"] .hero-panel { min-height:1200px !important; }
+.app-shell[class*="theme-"] .hero-content::before { width:430px !important; height:430px !important; }
+.app-shell[class*="theme-"] .hero-content::after { width:382px !important; height:382px !important; }
+.radial-prayer-stage { top:100px !important; bottom:60px !important; }
+.radial-orbit-outer { width:1000px !important; height:1000px !important; }
+.radial-orbit-inner { width:680px !important; height:680px !important; }
+.radial-prayer-card-1, .radial-prayer-card-2, .radial-prayer-card-3, .radial-prayer-card-4, .radial-prayer-card-5, .radial-prayer-card-6 { transform:rotate(var(--prayer-angle)) translateY(-340px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+.radial-prayer-card:hover, .radial-prayer-card.is-active { transform:rotate(var(--prayer-angle)) translateY(-340px) rotate(calc(-1 * var(--prayer-angle))) scale(1.08) !important; }
+.radial-utility-all { transform:rotate(var(--tool-angle)) translateY(-500px) rotate(calc(-1 * var(--tool-angle))) !important; }
+.radial-utility-all:hover { transform:rotate(var(--tool-angle)) translateY(-500px) rotate(calc(-1 * var(--tool-angle))) scale(1.08) !important; }
+@media (max-width:1250px) {
+  .app-shell[class*="theme-"] .hero-panel { min-height:1120px !important; }
+  .radial-orbit-outer { width:900px !important; height:900px !important; }
+  .radial-orbit-inner { width:620px !important; height:620px !important; }
+  .radial-prayer-card-1, .radial-prayer-card-2, .radial-prayer-card-3, .radial-prayer-card-4, .radial-prayer-card-5, .radial-prayer-card-6 { transform:rotate(var(--prayer-angle)) translateY(-310px) rotate(calc(-1 * var(--prayer-angle))) !important; }
+  .radial-prayer-card:hover, .radial-prayer-card.is-active { transform:rotate(var(--prayer-angle)) translateY(-310px) rotate(calc(-1 * var(--prayer-angle))) scale(1.08) !important; }
+  .radial-utility-all { transform:rotate(var(--tool-angle)) translateY(-450px) rotate(calc(-1 * var(--tool-angle))) !important; }
+  .radial-utility-all:hover { transform:rotate(var(--tool-angle)) translateY(-450px) rotate(calc(-1 * var(--tool-angle))) scale(1.08) !important; }
+}
+/* Modal theme bridge: every window inherits the active visual identity. */
+.app-shell[class*="theme-"] .adhkar-sheet, .app-shell[class*="theme-"] .settings-sheet, .app-shell[class*="theme-"] .calendar-sheet, .app-shell[class*="theme-"] .location-sheet, .app-shell[class*="theme-"] .dhikr-sheet, .app-shell[class*="theme-"] .sleep-sheet, .app-shell[class*="theme-"] .sound-modal-card, .app-shell[class*="theme-"] .card-create-sheet, .app-shell[class*="theme-"] .voice-manager-card, .app-shell[class*="theme-"] .dhikr-style-card, .app-shell[class*="theme-"] .add-dhikr-card, .app-shell[class*="theme-"] .dhikr-confirm-card, .app-shell[class*="theme-"] .dhikr-picker-card { color:var(--theme-text) !important; background:linear-gradient(145deg,var(--theme-surface-strong),var(--theme-surface)) !important; border-color:var(--theme-border) !important; box-shadow:0 30px 90px rgba(0,0,0,.48),0 0 42px var(--theme-glow) !important; }
+.app-shell[class*="theme-"] .adhkar-modal, .app-shell[class*="theme-"] .settings-modal, .app-shell[class*="theme-"] .calendar-modal, .app-shell[class*="theme-"] .location-modal, .app-shell[class*="theme-"] .dhikr-modal, .app-shell[class*="theme-"] .sleep-modal, .app-shell[class*="theme-"] .sound-modal, .app-shell[class*="theme-"] .card-create-modal { color:var(--theme-text); }
+.app-shell[class*="theme-"] .adhkar-backdrop, .app-shell[class*="theme-"] .settings-backdrop, .app-shell[class*="theme-"] .calendar-backdrop, .app-shell[class*="theme-"] .location-backdrop, .app-shell[class*="theme-"] .dhikr-backdrop, .app-shell[class*="theme-"] .sleep-backdrop, .app-shell[class*="theme-"] .card-create-backdrop, .app-shell[class*="theme-"] .sound-modal-backdrop { background:rgba(0,0,0,.68) !important; backdrop-filter:blur(12px) saturate(1.1); }
+.app-shell[class*="theme-"] .adhkar-sheet h2, .app-shell[class*="theme-"] .adhkar-sheet h3, .app-shell[class*="theme-"] .settings-sheet h2, .app-shell[class*="theme-"] .settings-sheet h3, .app-shell[class*="theme-"] .calendar-sheet h2, .app-shell[class*="theme-"] .location-sheet h2, .app-shell[class*="theme-"] .dhikr-sheet h2, .app-shell[class*="theme-"] .sleep-sheet h2, .app-shell[class*="theme-"] .sound-modal-card h3, .app-shell[class*="theme-"] .card-create-sheet h3, .app-shell[class*="theme-"] .voice-manager-card h3 { color:var(--theme-text) !important; }
+.app-shell[class*="theme-"] .adhkar-sheet p, .app-shell[class*="theme-"] .adhkar-sheet small, .app-shell[class*="theme-"] .settings-sheet p, .app-shell[class*="theme-"] .settings-sheet small, .app-shell[class*="theme-"] .calendar-sheet p, .app-shell[class*="theme-"] .location-sheet p, .app-shell[class*="theme-"] .dhikr-sheet p, .app-shell[class*="theme-"] .sleep-sheet p, .app-shell[class*="theme-"] .sound-modal-card p, .app-shell[class*="theme-"] .card-create-sheet p, .app-shell[class*="theme-"] label { color:var(--theme-muted) !important; }
+.app-shell[class*="theme-"] .settings-row, .app-shell[class*="theme-"] .settings-subrow, .app-shell[class*="theme-"] .sound-setting, .app-shell[class*="theme-"] .prayer-setting-row, .app-shell[class*="theme-"] .adhkar-card, .app-shell[class*="theme-"] .nested-card-item, .app-shell[class*="theme-"] .calendar-day, .app-shell[class*="theme-"] .calendar-navigation, .app-shell[class*="theme-"] .calendar-legend, .app-shell[class*="theme-"] .sound-file-status, .app-shell[class*="theme-"] .custom-card-preview { color:var(--theme-text) !important; background:rgba(255,255,255,.055) !important; border-color:var(--theme-border) !important; }
+.app-shell[class*="theme-"] .adhkar-card:hover, .app-shell[class*="theme-"] .settings-row:hover, .app-shell[class*="theme-"] .settings-subrow:hover, .app-shell[class*="theme-"] .calendar-day:hover { background:var(--theme-glow) !important; border-color:var(--theme-accent) !important; }
+.app-shell[class*="theme-"] .adhkar-card-title, .app-shell[class*="theme-"] .adhkar-card-caption, .app-shell[class*="theme-"] .settings-row strong, .app-shell[class*="theme-"] .settings-subrow strong, .app-shell[class*="theme-"] .sound-setting strong, .app-shell[class*="theme-"] .prayer-setting-row strong, .app-shell[class*="theme-"] .calendar-day strong, .app-shell[class*="theme-"] .calendar-day b { color:var(--theme-text) !important; }
+.app-shell[class*="theme-"] .settings-row-icon, .app-shell[class*="theme-"] .settings-title-icon, .app-shell[class*="theme-"] .calendar-title-icon, .app-shell[class*="theme-"] .location-title-icon, .app-shell[class*="theme-"] .dhikr-confirm-icon, .app-shell[class*="theme-"] .feature-icon { color:var(--theme-accent-strong) !important; background:var(--theme-glow) !important; border-color:var(--theme-border) !important; }
+.app-shell[class*="theme-"] .adhkar-topbar button, .app-shell[class*="theme-"] .settings-topbar button, .app-shell[class*="theme-"] .calendar-topbar button, .app-shell[class*="theme-"] .location-topbar button, .app-shell[class*="theme-"] .dhikr-topbar button, .app-shell[class*="theme-"] .sleep-topbar button, .app-shell[class*="theme-"] .sound-modal-header button, .app-shell[class*="theme-"] .card-create-heading button { color:var(--theme-accent-strong) !important; background:var(--theme-surface) !important; border-color:var(--theme-border) !important; }
+.app-shell[class*="theme-"] .adhkar-sheet button, .app-shell[class*="theme-"] .settings-sheet button, .app-shell[class*="theme-"] .calendar-sheet button, .app-shell[class*="theme-"] .location-sheet button, .app-shell[class*="theme-"] .dhikr-sheet button, .app-shell[class*="theme-"] .sleep-sheet button, .app-shell[class*="theme-"] .sound-modal-card button, .app-shell[class*="theme-"] .card-create-sheet button { border-color:var(--theme-border); }
+.app-shell[class*="theme-"] .adhkar-sheet input, .app-shell[class*="theme-"] .adhkar-sheet textarea, .app-shell[class*="theme-"] .settings-sheet input, .app-shell[class*="theme-"] .settings-sheet textarea, .app-shell[class*="theme-"] .settings-sheet select, .app-shell[class*="theme-"] .calendar-sheet input, .app-shell[class*="theme-"] .location-sheet input, .app-shell[class*="theme-"] .dhikr-sheet input, .app-shell[class*="theme-"] .dhikr-sheet textarea, .app-shell[class*="theme-"] .card-create-sheet input, .app-shell[class*="theme-"] .card-create-sheet textarea, .app-shell[class*="theme-"] .card-create-sheet select { color:var(--theme-text) !important; background:rgba(0,0,0,.2) !important; border-color:var(--theme-border) !important; caret-color:var(--theme-accent-strong); }
+.app-shell[class*="theme-"] .adhkar-sheet input::placeholder, .app-shell[class*="theme-"] textarea::placeholder { color:var(--theme-muted) !important; }
+.app-shell[class*="theme-"] .adhkar-sheet .dhikr-tools button, .app-shell[class*="theme-"] .dhikr-sheet .dhikr-tools button, .app-shell[class*="theme-"] .settings-sheet .settings-upload, .app-shell[class*="theme-"] .sound-modal-card label, .app-shell[class*="theme-"] .card-create-sheet label { color:var(--theme-accent-strong) !important; background:var(--theme-glow) !important; border-color:var(--theme-border) !important; }
+.app-shell[class*="theme-"] .adhkar-sheet .adhkar-card-icon, .app-shell[class*="theme-"] .dhikr-sheet .dhikr-icon-button, .app-shell[class*="theme-"] .calendar-sheet .calendar-dot, .app-shell[class*="theme-"] .sound-modal-card svg, .app-shell[class*="theme-"] .location-sheet svg { color:var(--theme-accent-strong) !important; }
+/* High-fidelity Andalusian identity: teal night, geometric tracery, arches, ivory and gold. */
+/* High-fidelity Glassmorphism identity: luminous blue/purple/green sky, blurred depth and translucent glass. */
+/* Calm, high-contrast refinements for the requested themes. These overrides intentionally avoid neon glow. */
+/* Andalusian heritage: deep garden green, parchment and aged brass, never electric teal. */
+/* Nature Calm: daylight sage, muted leaf green and readable ink. */
+/* Default editorial theme: matte charcoal and soft antique brass, with crisp icons. */
+.app-shell.theme-luxury-editorial {
+  --theme-bg: #171817; --theme-surface: #242523; --theme-surface-strong: #20211f;
+  --theme-text: #eee5d5; --theme-muted: #b9ad98; --theme-accent: #bd9d68;
+  --theme-accent-strong: #d1b77f; --theme-border: rgba(189,157,104,.27);
+  --theme-glow: rgba(189,157,104,.045); --theme-hero: linear-gradient(145deg,#262723,#171817 76%);
+}
+.app-shell.theme-luxury-editorial .hero-panel { background: var(--theme-hero) !important; }
+.app-shell.theme-luxury-editorial .hero-panel::before, .app-shell.theme-luxury-editorial .hero-panel::after { content: none !important; }
+.app-shell.theme-luxury-editorial .hero-content::before { border: 1px solid var(--theme-border) !important; background: #20211f !important; box-shadow: 0 0 0 5px rgba(189,157,104,.045) !important; }
+.app-shell.theme-luxury-editorial .hero-content::after { border: 1px solid rgba(189,157,104,.19) !important; }
+.app-shell.theme-luxury-editorial .hero-countdown { color: #e7d5b2 !important; text-shadow: none !important; }
+.app-shell.theme-luxury-editorial .radial-orbit { border-color: rgba(189,157,104,.22) !important; box-shadow: none !important; }
+.app-shell.theme-luxury-editorial .radial-prayer-card, .app-shell.theme-luxury-editorial .radial-utility-node { border-color: var(--theme-border) !important; background: #242523 !important; box-shadow: 0 7px 18px rgba(0,0,0,.18) !important; }
+.app-shell.theme-luxury-editorial .radial-prayer-card::before, .app-shell.theme-luxury-editorial .radial-utility-node::before { border-color: rgba(189,157,104,.2) !important; }
+.app-shell.theme-luxury-editorial .radial-prayer-icon, .app-shell.theme-luxury-editorial .radial-utility-node > span, .app-shell.theme-luxury-editorial .feature-icon, .app-shell.theme-luxury-editorial .prayer-icon { color: #d1b77f !important; background: rgba(189,157,104,.1) !important; border-color: rgba(189,157,104,.24) !important; filter: none !important; }
+.app-shell.theme-luxury-editorial .radial-prayer-card strong, .app-shell.theme-luxury-editorial .radial-prayer-card time, .app-shell.theme-luxury-editorial .radial-utility-node strong { text-shadow: none !important; }
+.app-shell.theme-luxury-editorial .brand-mark, .app-shell.theme-luxury-editorial .top-actions button { color: #d1b77f !important; background: #242523 !important; border-color: var(--theme-border) !important; box-shadow: none !important; }
+/* Preserve icon line work and legibility in the redesigned theme cards. */
+.app-shell.theme-luxury-editorial .radial-prayer-icon svg, .app-shell.theme-luxury-editorial .radial-utility-node svg { filter: none !important; stroke-width: 1.8; }
+/* Theme-aware adhkar/settings windows, parchment, counter, player and vertical browse mode. */
+.app-shell[class*="theme-"] .adhkar-sheet, .app-shell[class*="theme-"] .dhikr-sheet, .app-shell[class*="theme-"] .settings-sheet, .app-shell[class*="theme-"] .sound-modal-card{color:var(--theme-text)!important;background:linear-gradient(145deg,var(--theme-surface-strong),var(--theme-surface))!important;border:1px solid var(--theme-border)!important;box-shadow:0 24px 64px rgba(0,0,0,.22),0 0 18px var(--theme-glow)!important}
+.app-shell[class*="theme-"] .adhkar-topbar h2, .app-shell[class*="theme-"] .dhikr-topbar h2, .app-shell[class*="theme-"] .settings-topbar h2, .app-shell[class*="theme-"] .settings-topbar p, .app-shell[class*="theme-"] .adhkar-intro{color:var(--theme-text)!important;text-shadow:none!important}
+.app-shell[class*="theme-"] .adhkar-sheet::before, .app-shell[class*="theme-"] .adhkar-sheet::after, .app-shell[class*="theme-"] .settings-sheet::before, .app-shell[class*="theme-"] .settings-sheet::after{opacity:.1!important;filter:none!important}
+.app-shell[class*="theme-"] .adhkar-card, .app-shell[class*="theme-"] .settings-row, .app-shell[class*="theme-"] .settings-subrow, .app-shell[class*="theme-"] .sound-setting, .app-shell[class*="theme-"] .adhkar-feature-row, .app-shell[class*="theme-"] .adhkar-master-row{color:var(--theme-text)!important;background:linear-gradient(145deg,var(--theme-surface),var(--theme-surface-strong))!important;border:1px solid var(--theme-border)!important;box-shadow:0 8px 22px rgba(0,0,0,.12)!important}
+.app-shell[class*="theme-"] .settings-row::before, .app-shell[class*="theme-"] .settings-row::after, .app-shell[class*="theme-"] .settings-subrow::before, .app-shell[class*="theme-"] .settings-subrow::after, .app-shell[class*="theme-"] .sound-setting::before, .app-shell[class*="theme-"] .sound-setting::after{opacity:0!important;background:transparent!important}
+.app-shell[class*="theme-"] .adhkar-card:hover, .app-shell[class*="theme-"] .settings-row:hover, .app-shell[class*="theme-"] .settings-subrow:hover, .app-shell[class*="theme-"] .sound-setting:hover, .app-shell[class*="theme-"] .adhkar-feature-row:hover{border-color:var(--theme-accent)!important;box-shadow:0 11px 25px rgba(0,0,0,.17)!important}
+.app-shell[class*="theme-"] .adhkar-card-title, .app-shell[class*="theme-"] .settings-row strong, .app-shell[class*="theme-"] .settings-subrow strong, .app-shell[class*="theme-"] .sound-setting strong, .app-shell[class*="theme-"] .adhkar-feature-row strong, .app-shell[class*="theme-"] .adhkar-master-row strong{color:var(--theme-text)!important}
+.app-shell[class*="theme-"] .adhkar-card-caption, .app-shell[class*="theme-"] .settings-row small, .app-shell[class*="theme-"] .settings-subrow small, .app-shell[class*="theme-"] .sound-setting small, .app-shell[class*="theme-"] .adhkar-feature-row small, .app-shell[class*="theme-"] .adhkar-master-row small{color:var(--theme-muted)!important}
+.app-shell[class*="theme-"] .adhkar-icon, .app-shell[class*="theme-"] .settings-row-icon, .app-shell[class*="theme-"] .settings-title-icon, .app-shell[class*="theme-"] .adhkar-audio-trigger{color:var(--theme-accent-strong)!important;background:var(--theme-glow)!important;border:1px solid var(--theme-border)!important;box-shadow:none!important}
+.app-shell[class*="theme-"] .adhkar-back, .app-shell[class*="theme-"] .adhkar-edit, .app-shell[class*="theme-"] .dhikr-icon-button, .app-shell[class*="theme-"] .settings-close{color:var(--theme-accent-strong)!important;background:var(--theme-surface-strong)!important;border:1px solid var(--theme-border)!important;box-shadow:none!important}
+.app-shell[class*="theme-"] .settings-sheet input:not([type="checkbox"]):not([type="range"]), .app-shell[class*="theme-"] .settings-sheet select, .app-shell[class*="theme-"] .settings-sheet textarea{color:var(--theme-text)!important;background:var(--theme-surface-strong)!important;border-color:var(--theme-border)!important}
+.app-shell[class*="theme-"] .dhikr-tabs button, .app-shell[class*="theme-"] .counter-badges span{color:var(--theme-muted)!important;background:var(--theme-surface-strong)!important;border:1px solid var(--theme-border)!important}
+.app-shell[class*="theme-"] .dhikr-tabs .dhikr-tab-active{color:var(--theme-text)!important;background:var(--theme-glow)!important;border-color:var(--theme-accent)!important}
+.app-shell[class*="theme-"] .parchment-copy{color:var(--dhikr-text-color,var(--theme-text))!important;border:2px solid var(--theme-accent)!important;border-radius:16px!important;background:linear-gradient(145deg,var(--theme-surface-strong),var(--theme-surface))!important;box-shadow:inset 0 0 0 5px var(--theme-glow),0 12px 28px rgba(0,0,0,.16)!important;transform:none!important}
+.app-shell[class*="theme-"] .parchment-copy::before, .app-shell[class*="theme-"] .parchment-copy::after{width:18px!important;height:18px!important;border:1px solid var(--theme-accent)!important;background:var(--theme-surface)!important;filter:none!important}
+.app-shell[class*="theme-"] .parchment-copy .dhikr-text{color:var(--dhikr-text-color,var(--theme-text))!important;text-shadow:none!important}
+.app-shell[class*="theme-"] .parchment-copy .sacred-dhikr-title, .app-shell[class*="theme-"] .parchment-copy .custom-dhikr-title, .app-shell[class*="theme-"] .parchment-copy .misc-dhikr-title{color:var(--dhikr-title-color,var(--theme-accent-strong))!important}
+.app-shell[class*="theme-"] .dhikr-attribution, .app-shell[class*="theme-"] .dhikr-source, .app-shell[class*="theme-"] .dhikr-references{color:var(--theme-muted)!important}
+.app-shell[class*="theme-"] .parchment-copy mark{color:var(--theme-text)!important;background:var(--theme-glow)!important}
+.app-shell[class*="theme-"] .dhikr-side-arrow, .app-shell[class*="theme-"] .parchment-expand-button, .app-shell[class*="theme-"] .parchment-delete-button, .app-shell[class*="theme-"] .parchment-edit-button{color:var(--theme-accent-strong)!important;border-color:var(--theme-border)!important;background:var(--theme-surface-strong)!important;box-shadow:0 4px 12px rgba(0,0,0,.14)!important}
+.app-shell[class*="theme-"] .mechanical-counter-button{overflow:visible!important;border-radius:50%!important;background:transparent!important;box-shadow:none!important;filter:drop-shadow(0 8px 13px rgba(0,0,0,.16))!important}
+.app-shell[class*="theme-"] .mechanical-counter-button::before{inset:8%!important;border:2px solid var(--theme-accent)!important;border-radius:50%!important;background:radial-gradient(circle at 34% 28%,var(--theme-surface),var(--theme-surface-strong))!important;box-shadow:0 0 0 5px var(--theme-glow),inset 0 0 0 4px var(--theme-glow),inset 0 0 14px rgba(0,0,0,.12)!important}
+.app-shell[class*="theme-"] .mechanical-counter-button::after{inset:15%!important;border:1px solid var(--theme-border)!important;border-radius:50%!important;box-shadow:inset 0 0 0 3px var(--theme-glow)!important}
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-core{inset:27%!important;border:1px solid var(--theme-border)!important;border-radius:50%!important;background:var(--theme-surface-strong)!important;box-shadow:inset 0 2px 9px rgba(0,0,0,.14)!important}
+.app-shell[class*="theme-"] .mechanical-counter-button .counter-number{color:var(--theme-accent-strong)!important;font-family:"Cairo","Segoe UI",sans-serif!important;text-shadow:none!important}
+.app-shell[class*="theme-"] .dhikr-tools button{color:var(--theme-accent-strong)!important;background:linear-gradient(145deg,var(--theme-surface),var(--theme-surface-strong))!important;border:1px solid var(--theme-border)!important;box-shadow:0 7px 18px rgba(0,0,0,.13)!important}
+.app-shell[class*="theme-"] .dhikr-tools button:hover, .app-shell[class*="theme-"] .dhikr-tools button.is-playing{color:var(--theme-text)!important;background:var(--theme-glow)!important;border-color:var(--theme-accent)!important;box-shadow:0 0 0 2px var(--theme-glow)!important}
+.app-shell[class*="theme-"] .dhikr-tools b{color:var(--theme-text)!important}
+.app-shell[class*="theme-"] .dhikr-player{color:var(--theme-text)!important;border:1px solid var(--theme-border)!important;border-radius:18px!important;background:linear-gradient(145deg,var(--theme-surface),var(--theme-surface-strong))!important;box-shadow:0 10px 26px rgba(0,0,0,.17)!important;-webkit-mask-image:none!important;mask-image:none!important}
+.app-shell[class*="theme-"] .dhikr-player::before{background:var(--theme-surface)!important;border-color:var(--theme-border)!important;box-shadow:none!important}
+.app-shell[class*="theme-"] .dhikr-player label, .app-shell[class*="theme-"] .dhikr-player span, .app-shell[class*="theme-"] .dhikr-player small, .app-shell[class*="theme-"] .dhikr-player-track div{color:var(--theme-muted)!important}
+.app-shell[class*="theme-"] .dhikr-player select, .app-shell[class*="theme-"] .dhikr-player-controls>button, .app-shell[class*="theme-"] .dhikr-player-top>button{color:var(--theme-accent-strong)!important;background:var(--theme-surface-strong)!important;border:1px solid var(--theme-border)!important}
+.app-shell[class*="theme-"] .dhikr-player .dhikr-player-play{color:var(--theme-bg)!important;background:var(--theme-accent-strong)!important;border-color:var(--theme-accent)!important}
+.app-shell[class*="theme-"] .dhikr-player input[type="range"]{accent-color:var(--theme-accent-strong)!important}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-sheet{color:var(--theme-text)!important;background:linear-gradient(145deg,var(--theme-surface-strong),var(--theme-surface))!important}
+.app-shell[class*="theme-"] .dhikr-modal-expanded .dhikr-tools{background:linear-gradient(180deg,transparent,var(--theme-surface) 34%)!important;box-shadow:0 -8px 20px rgba(0,0,0,.1)!important}
+.app-shell[class*="theme-"] .dhikr-browse-card{color:var(--theme-text)!important;border:1px solid var(--theme-border)!important;border-radius:18px!important;background:linear-gradient(145deg,var(--theme-surface),var(--theme-surface-strong))!important;box-shadow:0 8px 22px rgba(0,0,0,.13)!important}
+.app-shell[class*="theme-"] .dhikr-browse-card.is-active{border-color:var(--theme-accent)!important;box-shadow:0 0 0 2px var(--theme-glow),0 10px 24px rgba(0,0,0,.16)!important}
+.app-shell[class*="theme-"] .dhikr-browse-copy .dhikr-browse-title{color:var(--theme-accent-strong)!important}
+.app-shell[class*="theme-"] .dhikr-browse-copy .dhikr-text{color:var(--dhikr-text-color,var(--theme-text))!important}
+.app-shell[class*="theme-"] .dhikr-browse-copy small, .app-shell[class*="theme-"] .dhikr-browse-meta{color:var(--theme-muted)!important}
+.app-shell[class*="theme-"] .dhikr-browse-meta{border-color:var(--theme-border)!important;background:var(--theme-glow)!important}
+.app-shell[class*="theme-"] .dhikr-browse-meta svg{color:var(--theme-accent-strong)!important}
+.app-shell[class*="theme-"] .dhikr-browse-counter{border-color:var(--theme-border)!important}
+.app-shell[class*="theme-"] .dhikr-browse-count{color:var(--theme-text)!important;background:var(--theme-surface-strong)!important}
+.app-shell[class*="theme-"] .dhikr-browse-count:hover{background:var(--theme-glow)!important}
+.app-shell[class*="theme-"] .dhikr-browse-count.is-complete{color:var(--theme-bg)!important;background:var(--theme-accent-strong)!important}
+.app-shell[class*="theme-"] .dhikr-browse-reset{color:var(--theme-accent-strong)!important;background:var(--theme-surface)!important;border-color:var(--theme-border)!important}
+.app-shell[class*="theme-"] .dhikr-browse-divider{color:var(--theme-accent)!important}
+.app-shell[class*="theme-"] .dhikr-browse-divider span{text-shadow:none!important}
+/* Technology: restrained cyan circuitry and a digital-button silhouette, not full-surface neon. */
+/* Andalusian manuscript in aged parchment, olive ink, and muted brass. */
+/* Calm minimal/nature paper, translucent glass cards, depth, and a subtle technical grid. */
+/* Distinct full-page visual identity for every theme: app backdrop plus its main prayer scene. */
+.app-shell.theme-luxury-editorial{background-color:#171817!important;background-image:radial-gradient(ellipse at 50% 0%,rgba(189,157,104,.11),transparent 34rem),radial-gradient(ellipse at 100% 100%,rgba(116,86,53,.12),transparent 31rem),linear-gradient(155deg,#1d1d1a,#171817 60%,#101111)!important}
+.app-shell.theme-luxury-editorial .hero-panel{background:radial-gradient(ellipse at 50% 16%,rgba(189,157,104,.085),transparent 32rem),linear-gradient(150deg,#292923,#1b1c19 58%,#151615)!important}
+/* Shared icon backplates: every icon holder uses the active theme's ink, accent and surface. */
+.app-shell[class*="theme-"] .radial-prayer-icon, .app-shell[class*="theme-"] .radial-utility-node>span, .app-shell[class*="theme-"] .feature-icon, .app-shell[class*="theme-"] .prayer-icon, .app-shell[class*="theme-"] .next-prayer-icon, .app-shell[class*="theme-"] .icon-button, .app-shell[class*="theme-"] .theme-status-icon, .app-shell[class*="theme-"] .theme-tool-icon, .app-shell[class*="theme-"] .settings-row-icon, .app-shell[class*="theme-"] .settings-title-icon, .app-shell[class*="theme-"] .calendar-title-icon, .app-shell[class*="theme-"] .location-title-icon, .app-shell[class*="theme-"] .adhkar-icon, .app-shell[class*="theme-"] .dhikr-icon-button, .app-shell[class*="theme-"] .dhikr-confirm-icon{color:var(--theme-accent-strong)!important;background:linear-gradient(145deg,color-mix(in srgb,var(--theme-surface-strong) 82%,var(--theme-accent) 18%),var(--theme-surface-strong))!important;border:1px solid var(--theme-border)!important;box-shadow:inset 0 1px rgba(255,255,255,.11),0 4px 12px rgba(0,0,0,.12)!important;filter:none!important}
+.app-shell[class*="theme-"] .radial-prayer-icon, .app-shell[class*="theme-"] .radial-utility-node>span, .app-shell[class*="theme-"] .feature-icon, .app-shell[class*="theme-"] .prayer-icon, .app-shell[class*="theme-"] .next-prayer-icon, .app-shell[class*="theme-"] .settings-row-icon, .app-shell[class*="theme-"] .settings-title-icon, .app-shell[class*="theme-"] .calendar-title-icon, .app-shell[class*="theme-"] .location-title-icon, .app-shell[class*="theme-"] .adhkar-icon, .app-shell[class*="theme-"] .dhikr-confirm-icon{display:grid;place-items:center;border-radius:15px!important;transition:background .2s ease,border-radius .2s ease,transform .2s ease,box-shadow .2s ease}
+.app-shell[class*="theme-"] .radial-prayer-icon svg, .app-shell[class*="theme-"] .radial-utility-node>span svg, .app-shell[class*="theme-"] .feature-icon svg, .app-shell[class*="theme-"] .prayer-icon svg, .app-shell[class*="theme-"] .next-prayer-icon svg, .app-shell[class*="theme-"] .icon-button svg, .app-shell[class*="theme-"] .settings-row-icon svg, .app-shell[class*="theme-"] .adhkar-icon svg{color:inherit!important;filter:none!important;stroke-width:1.8}
+.app-shell[class*="theme-"] .radial-prayer-card:hover .radial-prayer-icon, .app-shell[class*="theme-"] .radial-utility-node:hover>span, .app-shell[class*="theme-"] .feature-tile:hover .feature-icon{transform:translateY(-1px);box-shadow:inset 0 1px rgba(255,255,255,.16),0 7px 16px rgba(0,0,0,.16)!important}
+.app-shell[class*="theme-"] .top-actions .icon-button, .app-shell[class*="theme-"] .brand-mark{color:var(--theme-accent-strong)!important;border-color:var(--theme-border)!important;background:var(--theme-surface-strong)!important;box-shadow:0 4px 14px rgba(0,0,0,.12)!important}
+/* Theme-specific silhouettes for icon plates and navigation cards; symbol glyphs remain recognizable. */
+.app-shell.theme-luxury-editorial .radial-prayer-card, .app-shell.theme-luxury-editorial .radial-utility-node{border-radius:50%!important}
+.app-shell.theme-luxury-editorial .radial-prayer-icon, .app-shell.theme-luxury-editorial .radial-utility-node>span, .app-shell.theme-luxury-editorial .feature-icon, .app-shell.theme-luxury-editorial .prayer-icon{border-radius:12px!important;background:linear-gradient(145deg,rgba(189,157,104,.16),rgba(189,157,104,.04))!important;box-shadow:inset 0 0 0 1px rgba(189,157,104,.17),0 3px 10px rgba(0,0,0,.2)!important}
+/* Location-choice icons are part of the same global icon system and get a coordinated surface. */
+.app-shell[class*="theme-"] .location-option-icon{color:var(--theme-accent-strong)!important;background:linear-gradient(145deg,color-mix(in srgb,var(--theme-surface-strong) 82%,var(--theme-accent) 18%),var(--theme-surface-strong))!important;border:1px solid var(--theme-border)!important;box-shadow:inset 0 1px rgba(255,255,255,.12),0 4px 12px rgba(0,0,0,.12)!important;transition:border-radius .2s ease,transform .2s ease}
+.app-shell[class*="theme-"] .location-option{color:var(--theme-text)!important;background:linear-gradient(145deg,var(--theme-surface),var(--theme-surface-strong))!important;border-color:var(--theme-border)!important}
+.app-shell.theme-luxury-editorial .location-option-icon{border-radius:12px!important}
+/* Keep prayer status in normal flow so it always appears below its time. */
+.app-shell[class*="theme-"] .radial-prayer-card em{position:static!important;right:auto!important;bottom:auto!important;transform:none!important;align-self:center!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;margin:1px 0 0!important;padding:2px 7px!important;min-height:0!important;line-height:1.15!important;white-space:nowrap!important;border-radius:8px!important;color:var(--theme-text)!important;background:var(--theme-surface-strong)!important;border:1px solid var(--theme-border)!important;box-shadow:none!important;}
+
+/* User typography controls must override the fixed short/long presets in every theme. */
+#root .app-shell .dhikr-typography .dhikr-text,
+#root .app-shell .dhikr-typography .dhikr-text-long,
+#root .app-shell .dhikr-typography .dhikr-text-short {
+  font-size: var(--dhikr-text-size) !important;
+  line-height: var(--dhikr-line-height) !important;
+  color: var(--dhikr-text-color) !important;
+  font-weight: var(--dhikr-weight) !important;
+  font-style: var(--dhikr-style) !important;
+  text-decoration: var(--dhikr-decoration) !important;
+}
+#root .app-shell .dhikr-typography .custom-dhikr-title,
+#root .app-shell .dhikr-typography .sacred-dhikr-title,
+#root .app-shell .dhikr-typography .misc-dhikr-title,
+#root .app-shell .dhikr-typography .dhikr-browse-title {
+  font-size: var(--dhikr-title-size) !important;
+  color: var(--dhikr-title-color) !important;
+  margin-bottom: var(--dhikr-title-gap) !important;
+}
+#root .app-shell .dhikr-typography .dhikr-attribution,
+#root .app-shell .dhikr-typography .dhikr-source,
+#root .app-shell .dhikr-typography .dhikr-references {
+  color: var(--dhikr-text-color) !important;
+}
+/* Keep the live typography preview on the exact user-selected colors too. */
+#root .app-shell .dhikr-style-preview,
+#root .app-shell .dhikr-style-preview p {
+  color: var(--dhikr-text-color) !important;
+}
+#root .app-shell .dhikr-style-preview strong {
+  color: var(--dhikr-title-color) !important;
+}
