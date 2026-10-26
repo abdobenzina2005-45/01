@@ -1,0 +1,56 @@
+/* Optional theme package: modern-minimal. Loaded only when selected. */
+
+.app-shell.theme-modern-minimal { --theme-bg:#e9efe8; --theme-surface:#fff; --theme-surface-strong:#f8faf5; --theme-text:#244441; --theme-muted:#66817b; --theme-accent:#b78b5d; --theme-accent-strong:#286c66; --theme-border:rgba(67,119,107,.28); --theme-glow:rgba(89,151,135,.12); --theme-hero:linear-gradient(145deg,#477b70,#234f4d); }
+.app-shell.theme-modern-minimal {
+  --theme-bg: #f2f0e8;
+  --theme-surface: #fffdf8;
+  --theme-surface-strong: #e8eee7;
+  --theme-text: #263f3b;
+  --theme-muted: #556962;
+  --theme-accent: #9a7048;
+  --theme-accent-strong: #386e63;
+  --theme-border: rgba(69, 101, 88, .22);
+  --theme-glow: rgba(69, 116, 99, .07);
+  --theme-hero: linear-gradient(145deg, #f8f6ef 0%, #edf1e9 100%);
+}
+.app-shell.theme-modern-minimal .hero-panel { background: var(--theme-hero) !important; }
+.app-shell.theme-modern-minimal .hero-panel::before, .app-shell.theme-modern-minimal .hero-panel::after { content: none !important; }
+.app-shell.theme-modern-minimal .hero-content::before {
+  border: 1px solid rgba(75, 112, 96, .22) !important;
+  background: #fffdf8 !important;
+  box-shadow: 0 8px 28px rgba(45, 62, 51, .08) !important;
+}
+.app-shell.theme-modern-minimal .hero-content::after { border: 1px solid rgba(75, 112, 96, .14) !important; }
+.app-shell.theme-modern-minimal .hero-countdown, .app-shell.theme-modern-minimal .hero-countdown b, .app-shell.theme-modern-minimal .hero-eyebrow, .app-shell.theme-modern-minimal .location-label, .app-shell.theme-modern-minimal .hero-bottom-note { color: var(--theme-text) !important; text-shadow: none !important; }
+.app-shell.theme-modern-minimal .next-prayer-pill { color: var(--theme-text) !important; background: #edf2eb !important; border-color: var(--theme-border) !important; box-shadow: none !important; }
+.app-shell.theme-modern-minimal .radial-orbit { border-color: rgba(76, 104, 91, .17) !important; box-shadow: none !important; }
+.app-shell.theme-modern-minimal .radial-prayer-card, .app-shell.theme-modern-minimal .radial-utility-node {
+  color: var(--theme-text) !important;
+  border: 1px solid var(--theme-border) !important;
+  background: #fffdf8 !important;
+  box-shadow: 0 7px 20px rgba(44, 61, 50, .08) !important;
+}
+.app-shell.theme-modern-minimal .radial-prayer-card::before, .app-shell.theme-modern-minimal .radial-utility-node::before { border: 1px solid rgba(75, 112, 96, .17) !important; }
+.app-shell.theme-modern-minimal .radial-prayer-icon, .app-shell.theme-modern-minimal .radial-utility-node > span, .app-shell.theme-modern-minimal .feature-icon, .app-shell.theme-modern-minimal .prayer-icon {
+  color: #386e63 !important;
+  background: #e8f0e9 !important;
+  border-color: rgba(56, 110, 99, .18) !important;
+  filter: none !important;
+}
+.app-shell.theme-modern-minimal .radial-prayer-card strong, .app-shell.theme-modern-minimal .radial-prayer-card time, .app-shell.theme-modern-minimal .radial-utility-node strong { color: var(--theme-text) !important; text-shadow: none !important; }
+.app-shell.theme-modern-minimal .radial-prayer-card time small, .app-shell.theme-modern-minimal .radial-prayer-index { color: var(--theme-muted) !important; }
+.app-shell.theme-modern-minimal .radial-prayer-card em { color: #315e53 !important; background: #e8f0e9 !important; border-color: var(--theme-border) !important; }
+.app-shell.theme-modern-minimal .brand-mark, .app-shell.theme-modern-minimal .top-actions button { color: #386e63 !important; background: rgba(255, 253, 248, .88) !important; border-color: var(--theme-border) !important; box-shadow: none !important; }
+.app-shell.theme-modern-minimal .radial-prayer-icon svg, .app-shell.theme-modern-minimal .radial-utility-node svg { filter: none !important; stroke-width: 1.8; }
+.app-shell.theme-modern-minimal .parchment-copy{border-width:1px!important;border-radius:18px!important;background:linear-gradient(145deg,#fffdf8,#f0f2e9)!important;box-shadow:inset 0 0 0 4px rgba(93,128,106,.045),0 10px 24px rgba(45,62,51,.1)!important}
+.app-shell.theme-modern-minimal .parchment-copy .dhikr-text{color:var(--dhikr-text-color,#344639)!important}
+.app-shell.theme-modern-minimal .parchment-copy .sacred-dhikr-title, .app-shell.theme-modern-minimal .parchment-copy .custom-dhikr-title, .app-shell.theme-modern-minimal .parchment-copy .misc-dhikr-title{color:var(--dhikr-title-color,#386e63)!important}
+.app-shell.theme-modern-minimal .mechanical-counter-button::before{background:radial-gradient(circle at 35% 28%,#fffdf8,#e4ece3)!important;box-shadow:0 0 0 4px rgba(93,128,106,.1),inset 0 0 0 4px rgba(255,255,255,.8)!important}
+.app-shell.theme-modern-minimal .mechanical-counter-button .counter-core{background:#f9fbf5!important}
+.app-shell.theme-modern-minimal .mechanical-counter-button .counter-number{color:#386e63!important}
+.app-shell.theme-modern-minimal .dhikr-browse-count.is-complete{color:#fff!important;background:#477b70!important}
+.app-shell.theme-modern-minimal{background-color:#f2f0e8!important;background-image:radial-gradient(ellipse at 5% 10%,rgba(197,210,187,.32),transparent 35rem),radial-gradient(ellipse at 95% 88%,rgba(224,199,169,.19),transparent 32rem),linear-gradient(145deg,#f6f3eb,#edf1e9 54%,#e9eee8)!important}
+.app-shell.theme-modern-minimal .hero-panel{background:radial-gradient(ellipse at 50% 10%,rgba(255,255,255,.8),transparent 34rem),linear-gradient(145deg,#f8f6ef,#edf1e9 58%,#e6ece5)!important}
+.app-shell.theme-modern-minimal .radial-prayer-card, .app-shell.theme-modern-minimal .radial-utility-node{border-radius:50%!important}
+.app-shell.theme-modern-minimal .radial-prayer-icon, .app-shell.theme-modern-minimal .radial-utility-node>span, .app-shell.theme-modern-minimal .feature-icon, .app-shell.theme-modern-minimal .prayer-icon{border-radius:50%!important;background:#e8f0e9!important;box-shadow:inset 0 1px #fff,0 2px 7px rgba(40,70,55,.07)!important}
+.app-shell.theme-modern-minimal .location-option-icon{border-radius:50%!important}
