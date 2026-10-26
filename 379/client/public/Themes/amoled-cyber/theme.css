@@ -1,0 +1,8 @@
+/* Optional theme package: amoled-cyber. Loaded only when selected. */
+
+.app-shell.theme-amoled-cyber { --theme-bg:#030405; --theme-surface:#0e1017; --theme-surface-strong:#0d0f16; --theme-text:#f7f2ff; --theme-muted:#b3a9c5; --theme-accent:#cb6cff; --theme-accent-strong:#34eaff; --theme-border:rgba(203,108,255,.36); --theme-glow:rgba(52,234,255,.16); --theme-hero:linear-gradient(145deg,#11101d,#020203); }
+.app-shell.theme-amoled-cyber{background-color:#030405!important;background-image:radial-gradient(ellipse at 86% 8%,rgba(203,108,255,.1),transparent 29rem),radial-gradient(ellipse at 12% 88%,rgba(52,234,255,.075),transparent 32rem),repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 52px),linear-gradient(160deg,#050609,#030405 62%,#080610)!important}
+.app-shell.theme-amoled-cyber .hero-panel{background:radial-gradient(ellipse at 50% 20%,rgba(90,40,123,.17),transparent 33rem),repeating-linear-gradient(90deg,rgba(52,234,255,.022) 0 1px,transparent 1px 56px),linear-gradient(160deg,#100e18,#07080b 60%,#030405)!important}
+.app-shell.theme-amoled-cyber .radial-prayer-card, .app-shell.theme-amoled-cyber .radial-utility-node{border-radius:20px!important}
+.app-shell.theme-amoled-cyber .radial-prayer-icon, .app-shell.theme-amoled-cyber .radial-utility-node>span, .app-shell.theme-amoled-cyber .feature-icon, .app-shell.theme-amoled-cyber .prayer-icon{clip-path:polygon(25% 0,75% 0,100% 25%,100% 75%,75% 100%,25% 100%,0 75%,0 25%);border-radius:4px!important;background:linear-gradient(145deg,rgba(203,108,255,.14),rgba(52,234,255,.07))!important}
+.app-shell.theme-amoled-cyber .location-option-icon{border-radius:4px!important;clip-path:polygon(25% 0,75% 0,100% 25%,100% 75%,75% 100%,25% 100%,0 75%,0 25%)}
