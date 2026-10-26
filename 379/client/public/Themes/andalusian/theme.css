@@ -1,0 +1,85 @@
+/* Optional theme package: andalusian. Loaded only when selected. */
+
+.app-shell.theme-andalusian { --theme-bg:#071e25; --theme-surface:#0b2d33; --theme-surface-strong:#0d3840; --theme-text:#effff9; --theme-muted:#9ecbc1; --theme-accent:#d2a960; --theme-accent-strong:#52d2c3; --theme-border:rgba(82,210,195,.34); --theme-glow:rgba(82,210,195,.15); --theme-hero:linear-gradient(145deg,#104650,#06181e); }
+.app-shell.theme-andalusian { --theme-bg:#031f24; --theme-surface:rgba(5,47,51,.92); --theme-surface-strong:#06353a; --theme-text:#f3e4c3; --theme-muted:#c4b18b; --theme-accent:#d7af67; --theme-accent-strong:#63e0d2; --theme-border:rgba(215,175,103,.62); --theme-glow:rgba(47,214,197,.2); --theme-hero:linear-gradient(145deg,#073b3e,#02181d 74%); }
+.app-shell.theme-andalusian .hero-panel { background-color:#03262a !important; background-image:radial-gradient(circle at 50% 38%,rgba(36,153,143,.22),transparent 25rem),repeating-conic-gradient(from 0deg at 50% 42%,rgba(213,174,102,.07) 0 7deg,transparent 7deg 14deg),linear-gradient(145deg,#073e40,#02181d) !important; }
+.app-shell.theme-andalusian .hero-panel::before { content:""; position:absolute; left:50%; top:74px; width:min(860px,72vw); height:670px; transform:translateX(-50%); border:12px solid rgba(213,174,102,.8); border-bottom:0; border-radius:440px 440px 0 0; box-shadow:0 0 0 7px rgba(1,29,32,.9),0 0 0 13px rgba(213,174,102,.25),inset 0 0 0 2px rgba(98,224,210,.65); opacity:.8; pointer-events:none; }
+.app-shell.theme-andalusian .hero-panel::after { content:"✦  ❖  ✦  ❖  ✦"; position:absolute; left:50%; top:108px; width:min(760px,64vw); transform:translateX(-50%); color:rgba(215,175,103,.5); font:28px serif; letter-spacing:26px; text-align:center; pointer-events:none; }
+.app-shell.theme-andalusian .hero-content::before { width:470px !important; height:470px !important; border:9px double var(--theme-accent) !important; background:radial-gradient(circle,#f0dfb7 0 67%,#d7af67 68% 70%,#063238 71% 100%) !important; box-shadow:0 0 0 6px #063238,0 0 0 11px var(--theme-accent),0 0 55px rgba(35,216,198,.35) !important; }
+.app-shell.theme-andalusian .hero-content::after { width:402px !important; height:402px !important; border:2px dotted #063238 !important; }
+.app-shell.theme-andalusian .hero-countdown { color:#082c30 !important; font-family:Georgia,"Times New Roman",serif !important; font-size:68px !important; text-shadow:none !important; }
+.app-shell.theme-andalusian .hero-countdown b { color:#0b5556 !important; }
+.app-shell.theme-andalusian .hero-eyebrow, .app-shell.theme-andalusian .location-label { color:#0b5556 !important; }
+.app-shell.theme-andalusian .next-prayer-pill { color:#082c30 !important; background:rgba(240,223,183,.72) !important; border-color:#d7af67 !important; }
+.app-shell.theme-andalusian .radial-prayer-card, .app-shell.theme-andalusian .radial-utility-all { border:3px solid #d7af67 !important; border-radius:28px !important; background:linear-gradient(145deg,rgba(5,60,61,.98),rgba(2,31,35,.98)) !important; box-shadow:0 0 0 4px rgba(215,175,103,.25),0 0 20px rgba(39,210,194,.2),inset 0 0 0 2px rgba(98,224,210,.48) !important; }
+.app-shell.theme-andalusian .radial-prayer-card::before, .app-shell.theme-andalusian .radial-utility-all::before { inset:6px !important; border:2px solid rgba(215,175,103,.58) !important; border-radius:22px !important; }
+.app-shell.theme-andalusian .radial-prayer-icon, .app-shell.theme-andalusian .radial-utility-node span { color:#63e0d2 !important; }
+.app-shell.theme-andalusian .radial-prayer-card strong, .app-shell.theme-andalusian .radial-utility-node strong { color:#f3e4c3 !important; }
+.app-shell.theme-andalusian .radial-prayer-card time { color:#63e0d2 !important; }
+.app-shell.theme-andalusian .hero-bottom-note { color:#d7af67 !important; }
+.app-shell.theme-andalusian {
+  --theme-bg: #202a22;
+  --theme-surface: #2c382d;
+  --theme-surface-strong: #354333;
+  --theme-text: #f1e7d2;
+  --theme-muted: #c5b99d;
+  --theme-accent: #b99a63;
+  --theme-accent-strong: #d0b77d;
+  --theme-border: rgba(190, 161, 103, .34);
+  --theme-glow: rgba(190, 161, 103, .045);
+  --theme-hero: linear-gradient(145deg, #354333 0%, #202a22 72%, #19231d 100%);
+}
+.app-shell.theme-andalusian .hero-panel {
+  background-color: #202a22 !important;
+  background-image: repeating-linear-gradient(45deg, rgba(190,161,103,.025) 0 1px, transparent 1px 22px), repeating-linear-gradient(-45deg, rgba(190,161,103,.025) 0 1px, transparent 1px 22px), var(--theme-hero) !important;
+}
+.app-shell.theme-andalusian .hero-panel::before {
+  content: "" !important; position: absolute; left: 50%; top: 108px; width: min(760px, 66vw); height: 620px;
+  transform: translateX(-50%); border: 2px solid rgba(190,161,103,.27); border-bottom: 0;
+  border-radius: 390px 390px 0 0; box-shadow: none !important; opacity: .7; pointer-events: none;
+}
+.app-shell.theme-andalusian .hero-panel::after {
+  content: "❖  ✦  ❖" !important; position: absolute; left: 50%; top: 122px; width: 300px;
+  transform: translateX(-50%); color: rgba(208,183,125,.56); font: 18px Georgia, serif;
+  letter-spacing: 12px; text-align: center; pointer-events: none; filter: none !important;
+}
+.app-shell.theme-andalusian .hero-content::before {
+  border: 4px double #b99a63 !important;
+  background: radial-gradient(circle, #e9dfc7 0 66%, #c7ab72 67% 69%, #354333 70% 100%) !important;
+  box-shadow: 0 0 0 5px #202a22, 0 0 0 7px rgba(190,161,103,.4) !important;
+}
+.app-shell.theme-andalusian .hero-content::after { border: 1px dashed rgba(105, 87, 54, .55) !important; }
+.app-shell.theme-andalusian .hero-countdown { color: #354333 !important; text-shadow: none !important; font-family: Georgia, "Times New Roman", serif !important; }
+.app-shell.theme-andalusian .hero-countdown b, .app-shell.theme-andalusian .hero-eyebrow, .app-shell.theme-andalusian .location-label { color: #536044 !important; text-shadow: none !important; }
+.app-shell.theme-andalusian .next-prayer-pill { color: #354333 !important; background: rgba(233,223,199,.92) !important; border-color: #b99a63 !important; box-shadow: none !important; }
+.app-shell.theme-andalusian .radial-orbit { border-color: rgba(190,161,103,.28) !important; box-shadow: none !important; }
+.app-shell.theme-andalusian .radial-prayer-card, .app-shell.theme-andalusian .radial-utility-node {
+  color: var(--theme-text) !important; border: 2px solid #a88a55 !important; border-radius: 24px !important;
+  background: linear-gradient(145deg, #354333, #29352a) !important;
+  box-shadow: inset 0 0 0 1px rgba(230,211,164,.12), 0 6px 16px rgba(0,0,0,.18) !important;
+}
+.app-shell.theme-andalusian .radial-prayer-card::before, .app-shell.theme-andalusian .radial-utility-node::before { inset: 5px !important; border: 1px solid rgba(190,161,103,.26) !important; border-radius: 18px !important; }
+.app-shell.theme-andalusian .radial-prayer-icon, .app-shell.theme-andalusian .radial-utility-node > span, .app-shell.theme-andalusian .feature-icon, .app-shell.theme-andalusian .prayer-icon {
+  color: #d0b77d !important; background: rgba(190,161,103,.12) !important;
+  border-color: rgba(190,161,103,.3) !important; filter: none !important;
+}
+.app-shell.theme-andalusian .radial-prayer-card strong, .app-shell.theme-andalusian .radial-prayer-card time, .app-shell.theme-andalusian .radial-utility-node strong { color: #f1e7d2 !important; text-shadow: none !important; }
+.app-shell.theme-andalusian .radial-prayer-card time small, .app-shell.theme-andalusian .radial-prayer-index, .app-shell.theme-andalusian .hero-bottom-note { color: #c5b99d !important; }
+.app-shell.theme-andalusian .radial-prayer-card em { color: #473d2b !important; background: #d4bd87 !important; border-color: #a88a55 !important; }
+.app-shell.theme-andalusian .brand-mark, .app-shell.theme-andalusian .top-actions button { color: #d0b77d !important; background: #2c382d !important; border-color: var(--theme-border) !important; box-shadow: none !important; }
+.app-shell.theme-andalusian .radial-prayer-icon svg, .app-shell.theme-andalusian .radial-utility-node svg { filter: none !important; stroke-width: 1.8; }
+.app-shell.theme-andalusian .parchment-copy{color:#354333!important;border:5px double #a88a55!important;border-radius:5px 13px!important;background:repeating-linear-gradient(0deg,rgba(111,86,48,.025) 0 1px,transparent 1px 5px),linear-gradient(145deg,#e3d6b8,#f1e7d2 52%,#d9c9a5)!important;box-shadow:inset 0 0 0 5px rgba(168,138,85,.14),0 12px 24px rgba(0,0,0,.28)!important}
+.app-shell.theme-andalusian .parchment-copy .dhikr-text{color:var(--dhikr-text-color,#354333)!important}
+.app-shell.theme-andalusian .parchment-copy .sacred-dhikr-title, .app-shell.theme-andalusian .parchment-copy .custom-dhikr-title, .app-shell.theme-andalusian .parchment-copy .misc-dhikr-title{color:var(--dhikr-title-color,#7b6039)!important}
+.app-shell.theme-andalusian .parchment-copy::before, .app-shell.theme-andalusian .parchment-copy::after{border-radius:1px!important;background:#b99a63!important}
+.app-shell.theme-andalusian .dhikr-tools button{border-radius:5px 15px!important}
+.app-shell.theme-andalusian .mechanical-counter-button::before{border-color:#b99a63!important;background:radial-gradient(circle,#c4a86d,#725c38 72%,#3a3528)!important;box-shadow:0 0 0 5px rgba(185,154,99,.22),inset 0 0 14px rgba(54,42,25,.42)!important}
+.app-shell.theme-andalusian .mechanical-counter-button::after{border:2px double rgba(232,210,159,.7)!important}
+.app-shell.theme-andalusian .mechanical-counter-button .counter-core{border-color:rgba(238,220,177,.6)!important;background:rgba(54,67,51,.78)!important}
+.app-shell.theme-andalusian .mechanical-counter-button .counter-number{color:#f1e7d2!important}
+.app-shell.theme-andalusian .dhikr-browse-count.is-complete{color:#202a22!important;background:#d0b77d!important}
+.app-shell.theme-andalusian{background-color:#202a22!important;background-image:radial-gradient(ellipse at 50% 8%,rgba(161,137,86,.11),transparent 34rem),repeating-linear-gradient(45deg,rgba(185,154,99,.035) 0 1px,transparent 1px 34px),repeating-linear-gradient(-45deg,rgba(185,154,99,.025) 0 1px,transparent 1px 34px),linear-gradient(155deg,#29352b,#202a22 58%,#171e19)!important}
+.app-shell.theme-andalusian .hero-panel{background:radial-gradient(ellipse at 50% 20%,rgba(185,154,99,.09),transparent 30rem),repeating-linear-gradient(45deg,rgba(185,154,99,.04) 0 1px,transparent 1px 28px),repeating-linear-gradient(-45deg,rgba(185,154,99,.03) 0 1px,transparent 1px 28px),linear-gradient(150deg,#354333,#202a22 72%,#19231d)!important}
+.app-shell.theme-andalusian .radial-prayer-card, .app-shell.theme-andalusian .radial-utility-node{border-radius:20px!important}
+.app-shell.theme-andalusian .radial-prayer-icon, .app-shell.theme-andalusian .radial-utility-node>span, .app-shell.theme-andalusian .feature-icon, .app-shell.theme-andalusian .prayer-icon{border-radius:5px 14px!important;background:linear-gradient(145deg,rgba(185,154,99,.18),rgba(185,154,99,.07))!important;box-shadow:inset 0 0 0 2px rgba(185,154,99,.12),0 3px 8px rgba(0,0,0,.16)!important}
+.app-shell.theme-andalusian .location-option-icon{border-radius:5px 14px!important;box-shadow:inset 0 0 0 2px rgba(185,154,99,.12),0 3px 8px rgba(0,0,0,.16)!important}
