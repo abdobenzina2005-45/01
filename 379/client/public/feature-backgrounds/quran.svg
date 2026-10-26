@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#c7d8cd"/><stop offset="1" stop-color="#426c68"/>
+    </linearGradient>
+    <linearGradient id="cover" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#315b50"/><stop offset="1" stop-color="#183c3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#g)"/>
+  <circle cx="90" cy="90" r="130" fill="#fff" opacity=".12"/>
+  <circle cx="555" cy="555" r="180" fill="#102f30" opacity=".2"/>
+  <ellipse cx="320" cy="505" rx="225" ry="34" fill="#102f30" opacity=".28"/>
+  <path d="M112 190Q215 140 320 205V478Q215 425 112 465Z" fill="url(#cover)" stroke="#f0d596" stroke-width="14"/>
+  <path d="M528 190Q425 140 320 205V478Q425 425 528 465Z" fill="url(#cover)" stroke="#f0d596" stroke-width="14"/>
+  <path d="M320 205V478" stroke="#f0d596" stroke-width="12"/>
+  <path d="M150 244Q230 210 300 242M150 288Q230 254 300 286M150 332Q230 298 300 330M150 376Q230 342 300 374M340 242Q410 210 490 244M340 286Q410 254 490 288M340 330Q410 298 490 332M340 374Q410 342 490 376" fill="none" stroke="#ead7a7" stroke-width="10" stroke-linecap="round" opacity=".82"/>
+  <path d="M320 255l18 35 39 4-30 25 9 38-36-20-36 20 9-38-30-25 39-4z" fill="none" stroke="#f0d596" stroke-width="7"/>
+</svg>
