@@ -1,0 +1,92 @@
+.mosques-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 18px; font-family: "Tajawal", sans-serif; color: #25333a; }
+.mosques-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(27, 39, 39, .62); backdrop-filter: blur(5px); }
+.mosques-sheet { width: min(1120px, 100%); max-height: min(940px, calc(100vh - 28px)); position: relative; display: flex; flex-direction: column; overflow: hidden; border: 1px solid rgba(255,255,255,.8); border-radius: 25px; background: #fbf9f4; box-shadow: 0 26px 85px rgba(20, 31, 31, .34); animation: sheet-rise .26s var(--ease-out) both; }
+.mosques-header { min-height: 74px; display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid #ebe4d9; background: linear-gradient(115deg, #fffdf8, #f6f1e8); }
+.mosques-heading-mark { width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid #e5d2b2; border-radius: 14px; color: #8a6843; background: #f4ead8; }
+.mosques-heading-copy h2 { margin: 0; color: #2d4248; font-family: "Cairo", sans-serif; font-size: 18px; font-weight: 800; }
+.mosques-heading-copy p { margin: 2px 0 0; color: #828984; font-size: 11px; }
+.mosques-network-badge { display: inline-flex; align-items: center; gap: 5px; margin-right: auto; padding: 6px 9px; border: 1px solid #dce8dd; border-radius: 999px; color: #557c65; background: #f0f7ef; font-size: 10px; font-weight: 800; }
+.mosques-network-badge.is-offline { color: #936c3d; border-color: #eadbc3; background: #fbf2e3; }
+.mosques-close { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid #e9e2d8; border-radius: 11px; color: #777f7a; background: #fff; transition: transform .18s ease, color .18s ease; }
+.mosques-close:hover { color: #a7584f; transform: rotate(5deg); }
+.mosques-controls { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 17px; border-bottom: 1px solid #eee8de; background: rgba(255,255,255,.72); }
+.mosques-controls button, .mosques-download-button { min-height: 36px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 7px 12px; border: 1px solid #e7ded0; border-radius: 11px; color: #536c6d; background: #fff; font-family: inherit; font-size: 11px; font-weight: 800; transition: transform .18s ease, background .18s ease, border-color .18s ease; }
+.mosques-controls button:hover:not(:disabled), .mosques-download-button:hover:not(:disabled) { transform: translateY(-1px); border-color: #d7bd97; background: #fbf7ef; }
+.mosques-controls button:disabled, .mosques-download-button:disabled { cursor: not-allowed; opacity: .55; }
+.mosques-controls .mosques-control-primary { color: #fffaf1; border-color: #426779; background: #426779; }
+.mosques-controls .mosques-control-primary:hover:not(:disabled) { color: white; border-color: #345669; background: #345669; }
+.mosques-controls .mosques-control-secondary.is-active { color: #8a5d2c; border-color: #dab87f; background: #fbf1df; }
+.mosques-map-wrap { min-height: 275px; height: clamp(270px, 36vh, 410px); position: relative; background: #e8e9e2; }
+.mosques-map-canvas { width: 100%; height: 100%; }
+.mosques-map-caption, .mosques-offline-tag { position: absolute; z-index: 2; top: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid rgba(233,228,218,.9); border-radius: 11px; color: #4e6665; background: rgba(255,253,248,.94); box-shadow: 0 4px 14px rgba(42,52,48,.12); font-size: 10px; font-weight: 800; pointer-events: none; }
+.mosques-map-caption { right: 12px; }
+.mosques-map-dot { width: 7px; height: 7px; border-radius: 50%; background: #4d8a72; box-shadow: 0 0 0 3px rgba(77,138,114,.16); }
+.mosques-offline-tag { left: 12px; color: #856138; }
+.mosques-map-canvas .maplibregl-ctrl-top-left { top: 56px; left: 10px; }
+.maplibregl-ctrl-group { overflow: hidden; border: 1px solid #e6dfd4 !important; border-radius: 11px !important; box-shadow: 0 5px 14px rgba(34,45,43,.15) !important; }
+.maplibregl-ctrl-group button { width: 31px !important; height: 31px !important; }
+.maplibregl-ctrl-attrib { border-radius: 8px 0 0 0; font-family: "Tajawal", sans-serif; font-size: 9px !important; }
+.mosque-user-pin, .mosque-point-pin { width: 27px; height: 27px; position: relative; padding: 0; border: 3px solid #fff; border-radius: 50% 50% 50% 3px; background: #41877c; box-shadow: 0 3px 9px rgba(26,47,41,.38); transform: rotate(-45deg); cursor: pointer; }
+.mosque-user-pin::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: white; }
+.mosque-point-pin { width: 24px; height: 24px; border-color: #fffdf8; background: #b17b47; }
+.mosque-point-pin::before { content: ""; position: absolute; inset: 5px; border: 1.5px solid rgba(255,255,255,.94); border-radius: 50%; }
+.mosque-point-pin-nearest { z-index: 2; border-color: #fff5dd; background: #b95745; box-shadow: 0 0 0 4px rgba(185,87,69,.18), 0 3px 10px rgba(26,47,41,.4); }
+.mosques-bottom-panel { max-height: min(340px, 40vh); overflow: auto; padding: 12px 17px 8px; scrollbar-width: thin; scrollbar-color: #d5c8b4 transparent; }
+.mosque-nearest-card { min-height: 64px; display: flex; align-items: center; gap: 11px; padding: 10px 12px; border: 1px solid #e8dfd1; border-radius: 15px; background: #fffdf8; box-shadow: 0 4px 13px rgba(74,64,49,.045); }
+.mosque-nearest-icon { width: 37px; height: 37px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 12px; color: #97683b; background: #f5ead6; }
+.mosque-nearest-details { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.mosque-nearest-label { color: #a1805d; font-size: 9px; font-weight: 800; }
+.mosque-nearest-details strong { overflow: hidden; color: #374c4d; font-family: "Cairo", sans-serif; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.mosque-nearest-details small { color: #8d9590; font-size: 9px; }
+.mosque-nearest-details .mosque-route-summary { color: #4c765d; font-size: 10px; font-weight: 800; }
+.mosque-nearest-details .mosque-route-summary.is-loading { color: #9b8061; }
+.mosque-direction-button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 4px; margin-right: auto; padding: 8px 10px; border: 1px solid #e7ddce; border-radius: 10px; color: #60736d; background: #fff; font-family: inherit; font-size: 10px; font-weight: 800; }
+.mosque-direction-button:hover { color: #8b6034; border-color: #ddc49f; background: #fbf4e9; }
+.mosques-empty-state { min-height: 56px; display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px dashed #ded6ca; border-radius: 14px; color: #858f8a; background: rgba(255,255,255,.62); font-size: 11px; }
+.mosques-nearby-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 8px; }
+.mosque-nearby-item { min-width: 0; min-height: 35px; display: flex; align-items: center; gap: 7px; padding: 6px 8px; border: 1px solid #eee8dd; border-radius: 10px; color: #526461; background: #fff; text-align: right; transition: border-color .18s ease, background .18s ease; }
+.mosque-nearby-item:hover, .mosque-nearby-item.is-selected { border-color: #d7bb91; background: #fcf6eb; }
+.mosque-nearby-rank { width: 19px; height: 19px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 7px; color: #a37849; background: #f5eddf; font-family: "Cairo", sans-serif; font-size: 9px; font-weight: 800; }
+.mosque-nearby-name { min-width: 0; overflow: hidden; font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.mosque-nearby-distance { flex: 0 0 auto; margin-right: auto; color: #9b8061; font-size: 9px; font-weight: 800; }
+.mosques-message { display: flex; align-items: flex-start; gap: 7px; margin: 8px 0 0; padding: 7px 9px; border-radius: 9px; color: #916b40; background: #faf2e4; font-size: 10px; line-height: 1.65; }
+.mosques-message svg { flex: 0 0 auto; margin-top: 1px; }
+.mosques-message.is-success { color: #4c765d; background: #edf5ec; }
+.mosques-offline-section { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px 12px; margin-top: 10px; padding: 10px 11px; border: 1px solid #e8e0d3; border-radius: 14px; background: linear-gradient(100deg, #f1f5ef, #fffdf8); }
+.mosques-offline-copy { min-width: 0; display: flex; align-items: center; gap: 9px; }
+.mosques-offline-icon { width: 32px; height: 32px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid #dfe8dd; border-radius: 11px; color: #587764; background: #fff; }
+.mosques-offline-copy div { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.mosques-offline-copy strong { color: #435b53; font-family: "Cairo", sans-serif; font-size: 11px; }
+.mosques-offline-copy small { overflow: hidden; color: #87918a; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.mosques-download-button { min-height: 32px; color: #fffaf1; border-color: #547365; background: #547365; font-size: 10px; }
+.mosques-download-button:hover:not(:disabled) { color: #fff; border-color: #3f6252; background: #3f6252; }
+.mosques-download-button.is-cancel { color: #8c5951; border-color: #ebd9d4; background: #fff5f1; }
+.mosques-download-progress { grid-column: 1 / -1; position: relative; height: 24px; overflow: hidden; border: 1px solid #e6e0d5; border-radius: 8px; background: #fff; }
+.mosques-download-progress > span { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: linear-gradient(90deg, #d8e8d9, #b8d1bb); transition: width .2s ease; }
+.mosques-download-progress small { position: absolute; inset: 0; display: grid; place-items: center; color: #536b5a; font-size: 9px; font-weight: 800; }
+.mosques-offline-note { grid-column: 1 / -1; margin: -3px 0 0; color: #9b9386; font-size: 8px; line-height: 1.6; }
+.mosques-offline-warning { display: flex; align-items: center; gap: 7px; margin-top: 8px; padding: 8px 10px; border: 1px solid #eadbc3; border-radius: 10px; color: #927045; background: #fbf2e3; font-size: 10px; }
+.mosques-footer { min-height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 5px 18px 9px; color: #969990; font-size: 9px; }
+.mosques-footer a { color: #668078; text-decoration: none; }
+.mosques-footer a:hover { text-decoration: underline; }
+@media (max-width: 700px) {
+  .mosques-modal { align-items: end; padding: 0; }
+  .mosques-sheet { width: 100%; max-height: 96vh; border-radius: 22px 22px 0 0; }
+  .mosques-header { min-height: 66px; padding: 11px 13px; }
+  .mosques-heading-mark { width: 37px; height: 37px; border-radius: 12px; }
+  .mosques-heading-copy h2 { font-size: 16px; }
+  .mosques-controls { gap: 6px; padding: 9px 10px; }
+  .mosques-controls button { min-height: 34px; flex: 1 1 calc(50% - 6px); padding: 6px 8px; font-size: 10px; }
+  .mosques-map-wrap { min-height: 245px; height: 33vh; }
+  .mosques-bottom-panel { max-height: 37vh; padding: 9px 10px 5px; }
+  .mosques-nearby-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mosques-footer { padding: 5px 11px 8px; font-size: 8px; }
+}
+@media (max-width: 390px) {
+  .mosques-map-wrap { min-height: 220px; height: 30vh; }
+  .mosque-nearest-card { gap: 7px; padding: 8px; }
+  .mosque-direction-button span { display: none; }
+  .mosques-offline-section { grid-template-columns: 1fr; }
+  .mosques-offline-actions { justify-self: start; }
+  .mosques-footer { align-items: flex-start; flex-direction: column; gap: 3px; }
+}
