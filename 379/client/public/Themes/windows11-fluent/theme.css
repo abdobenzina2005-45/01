@@ -1,0 +1,9 @@
+/* Optional theme package: windows11-fluent. Loaded only when selected. */
+
+.app-shell.theme-windows11-fluent { --theme-bg:#142033; --theme-surface:#2b3f5b; --theme-surface-strong:#1b2b45; --theme-text:#e7f3ff; --theme-muted:#a9c3dc; --theme-accent:#8fc7ff; --theme-accent-strong:#d8eaff; --theme-border:rgba(143,199,255,.3); --theme-glow:rgba(105,169,235,.18); --theme-hero:linear-gradient(145deg,#29476c,#101b30); }
+.app-shell.theme-windows11-fluent .parchment-copy{backdrop-filter:blur(14px) saturate(1.15);background:linear-gradient(145deg,color-mix(in srgb,var(--theme-surface) 86%,transparent),color-mix(in srgb,var(--theme-surface-strong) 88%,transparent))!important}
+.app-shell.theme-windows11-fluent{background-color:#142033!important;background-image:radial-gradient(ellipse at 8% 8%,rgba(106,155,212,.22),transparent 35rem),radial-gradient(ellipse at 88% 28%,rgba(109,139,202,.18),transparent 34rem),radial-gradient(ellipse at 60% 92%,rgba(82,170,185,.14),transparent 36rem),linear-gradient(145deg,#16243b,#121e32 60%,#172b43)!important}
+.app-shell.theme-windows11-fluent .hero-panel{background:radial-gradient(ellipse at 78% 16%,rgba(143,199,255,.16),transparent 30rem),radial-gradient(ellipse at 18% 75%,rgba(114,150,205,.13),transparent 34rem),linear-gradient(145deg,#243c5a,#182943 62%,#142033)!important;backdrop-filter:blur(8px)}
+.app-shell.theme-windows11-fluent .radial-prayer-card, .app-shell.theme-windows11-fluent .radial-utility-node{border-radius:25px!important;backdrop-filter:blur(12px) saturate(1.12)}
+.app-shell.theme-windows11-fluent .radial-prayer-icon, .app-shell.theme-windows11-fluent .radial-utility-node>span, .app-shell.theme-windows11-fluent .feature-icon, .app-shell.theme-windows11-fluent .prayer-icon{border-radius:13px!important;background:linear-gradient(145deg,rgba(143,199,255,.22),rgba(143,199,255,.08))!important;backdrop-filter:blur(8px)}
+.app-shell.theme-windows11-fluent .location-option-icon{border-radius:14px!important}
