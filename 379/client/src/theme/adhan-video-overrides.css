@@ -1,0 +1,93 @@
+/* Adhan video library: theme-aware rows with a compact preview on the right and delete on the left. */
+#root .app-shell[class*="theme-"] .background-video-list {
+  scrollbar-color: var(--theme-accent) transparent;
+}
+#root .app-shell[class*="theme-"] .background-video-item {
+  color: var(--theme-text) !important;
+  border-color: var(--theme-border) !important;
+  background: var(--theme-surface-strong) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-item.is-selected {
+  border-color: var(--theme-accent) !important;
+  box-shadow: 0 0 0 2px var(--theme-glow), 0 8px 18px rgba(0,0,0,.14) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-select {
+  color: var(--theme-text) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-thumb {
+  border-color: var(--theme-border) !important;
+  background: var(--theme-surface) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-copy strong {
+  color: var(--theme-text) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-copy small {
+  color: var(--theme-muted) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-check {
+  color: var(--theme-bg) !important;
+  background: var(--theme-accent-strong) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-item > .background-delete-button {
+  color: var(--theme-accent-strong) !important;
+  border-color: var(--theme-border) !important;
+  background: var(--theme-surface) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-item > .background-delete-button:hover {
+  color: var(--theme-bg) !important;
+  background: var(--theme-accent-strong) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-empty {
+  color: var(--theme-muted) !important;
+  border-color: var(--theme-border) !important;
+  background: var(--theme-surface) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-empty strong,
+#root .app-shell[class*="theme-"] .background-video-empty small {
+  color: var(--theme-text) !important;
+}
+@media (max-width: 600px) {
+  .background-video-item { min-height: 66px; }
+  .background-video-thumb { width: 78px; height: 48px; }
+  .background-video-copy strong { max-width: 150px; }
+}
+
+#root .app-shell[class*="theme-"] .background-video-preview-card {
+  color: var(--theme-text) !important;
+  border-color: var(--theme-border) !important;
+  background: linear-gradient(145deg, var(--theme-surface-strong), var(--theme-surface)) !important;
+  box-shadow: 0 30px 90px rgba(0,0,0,.48), 0 0 28px var(--theme-glow) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-preview-header strong {
+  color: var(--theme-text) !important;
+}
+#root .app-shell[class*="theme-"] .background-video-preview-header button {
+  color: var(--theme-accent-strong) !important;
+  border-color: var(--theme-border) !important;
+  background: var(--theme-surface) !important;
+}
+
+/* Keep long Arabic tool labels fully readable instead of clipping them inside the circular node. */
+#root .app-shell[class*="theme-"] .radial-utility-node.radial-utility-long-label {
+  overflow: visible !important;
+}
+#root .app-shell[class*="theme-"] .radial-utility-node.radial-utility-long-label > strong {
+  width: 78px !important;
+  max-width: 78px !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  word-break: keep-all;
+  display: block;
+  text-align: center;
+  line-height: 1.15 !important;
+  font-size: 8px !important;
+}
+#root .app-shell[class*="theme-"] .background-video-check {
+  width: 27px !important;
+  height: 27px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+}
+#root .app-shell[class*="theme-"] .background-video-item .background-video-check {
+  position: static !important;
+}
